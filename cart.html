@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — LuxeNaija</title>
+  <meta name="description" content="Review your pre-order cart and complete checkout on LuxeNaija.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="LuxeNaija Logo" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="products.html" id="nav-shop">Shop</a></li>
+      <li><a href="about.html" id="nav-about">How It Works</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="search-trigger-btn" aria-label="Search catalog">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-icon-btn" id="cart-btn" aria-label="View cart" onclick="location.href='cart.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="products.html">Shop</a><a href="about.html">How It Works</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Cart</span></div>
+    <div class="section-label">Review Your Order</div>
+    <h1 class="section-title">Your <em>Pre-Order Cart</em></h1>
+  </div>
+</div>
+
+<!-- EMPTY CART STATE -->
+<div id="cart-empty" style="display:none;text-align:center;padding:6rem 2rem">
+  <div style="font-size:4rem;margin-bottom:1.5rem">🛒</div>
+  <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:600;margin-bottom:0.75rem">Your cart is empty</h2>
+  <p class="text-muted" style="margin-bottom:2rem;max-width:400px;margin-inline:auto">Discover authentic luxury fashion and add items to your pre-order cart.</p>
+  <a href="products.html" class="btn btn-primary btn-lg" id="empty-cart-shop">Start Shopping →</a>
+</div>
+
+<!-- CART CONTENT -->
+<div class="container">
+  <div class="cart-layout" id="cart-content" style="display:none">
+
+    <!-- Cart Items -->
+    <div>
+      <div id="cart-items"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;flex-wrap:wrap;gap:0.75rem">
+        <a href="products.html" class="btn btn-outline" id="cart-continue-shopping">← Continue Shopping</a>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--white-dim)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Buyer protection on all orders
+        </div>
+      </div>
+
+      <!-- Savings summary banner -->
+      <div style="margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,rgba(74,222,128,0.08),rgba(74,222,128,0.03));border:1px solid rgba(74,222,128,0.2);border-radius:var(--radius-md)">
+        <div style="display:flex;align-items:center;gap:0.75rem">
+          <span style="font-size:1.5rem">🎉</span>
+          <div>
+            <div style="font-weight:600;font-size:0.95rem;color:#4ade80">You're saving big!</div>
+            <div style="font-size:0.85rem;color:var(--white-dim)">
+              vs. local market prices: <strong style="color:#4ade80" id="summary-savings">₦0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div>
+      <div class="order-summary" id="order-summary">
+        <div class="order-summary-title">Order Summary</div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">₦0</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping (Nigeria-wide)</span>
+          <span id="summary-shipping">₦3,500</span>
+        </div>
+        <div class="summary-row">
+          <span>Pre-order processing</span>
+          <span style="color:#4ade80">FREE</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span class="total-val" id="summary-total">₦0</span>
+        </div>
+
+        <div style="margin:1.25rem 0;padding:0.85rem;background:rgba(201,168,76,0.06);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.82rem;color:var(--white-dim);display:flex;gap:0.5rem;align-items:flex-start">
+          <span style="color:var(--gold)">⏰</span>
+          <span>Your order will be sourced within the current <strong style="color:var(--white)">Batch 7</strong> — estimated delivery <strong style="color:var(--gold)">within 30 days</strong>.</span>
+        </div>
+
+        <!-- Delivery Form -->
+        <form class="checkout-form" id="checkout-form" novalidate>
+          <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:1rem">Delivery Details</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="first-name">First Name</label>
+              <input type="text" class="form-input" id="first-name" placeholder="Adaeze" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last-name">Last Name</label>
+              <input type="text" class="form-input" id="last-name" placeholder="Okonkwo" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number (WhatsApp preferred)</label>
+            <input type="tel" class="form-input" id="phone" placeholder="+234 801 234 5678" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" class="form-input" id="email" placeholder="you@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="address">Delivery Address</label>
+            <input type="text" class="form-input" id="address" placeholder="House No, Street Name, Area" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="state">State</label>
+              <select class="form-input" id="state" required>
+                <option value="">Select State</option>
+                <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option>
+                <option>Anambra</option><option>Bauchi</option><option>Bayelsa</option>
+                <option>Benue</option><option>Borno</option><option>Cross River</option>
+                <option>Delta</option><option>Ebonyi</option><option>Edo</option>
+                <option>Ekiti</option><option>Enugu</option><option>Gombe</option>
+                <option>Imo</option><option>Jigawa</option><option>Kaduna</option>
+                <option>Kano</option><option>Katsina</option><option>Kebbi</option>
+                <option>Kogi</option><option>Kwara</option><option selected>Lagos</option>
+                <option>Nasarawa</option><option>Niger</option><option>Ogun</option>
+                <option>Ondo</option><option>Osun</option><option>Oyo</option>
+                <option>Plateau</option><option>Rivers</option><option>Sokoto</option>
+                <option>Taraba</option><option>Yobe</option><option>Zamfara</option>
+                <option>FCT Abuja</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">City / LGA</label>
+              <input type="text" class="form-input" id="city" placeholder="Ikeja" required>
+            </div>
+          </div>
+
+          <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin:1.25rem 0 0.75rem">Payment Method</h3>
+          <div class="payment-methods">
+            <div class="pay-method active" id="pay-paystack" role="button" tabindex="0">
+              💳 Paystack
+            </div>
+            <div class="pay-method" id="pay-flutterwave" role="button" tabindex="0">
+              ⚡ Flutterwave
+            </div>
+            <div class="pay-method" id="pay-transfer" role="button" tabindex="0">
+              🏦 Bank Transfer
+            </div>
+          </div>
+
+          <div style="margin:1rem 0;padding:0.75rem;background:var(--surface-3);border-radius:var(--radius-sm);font-size:0.8rem;color:var(--white-dim);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--gold)">🔒</span>
+            All payments are encrypted and secured by Paystack
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="place-order-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Confirm Pre-Order →
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="margin-top:4rem">
+  <div class="container">
+    <div class="footer-bottom" style="padding-top:2rem;border-top:1px solid var(--border)">
+      <p>© 2024 LuxeNaija. All rights reserved.</p>
+      <a href="products.html" class="btn-ghost">← Back to Shop</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Live Search Modal -->
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true">
+  <div class="search-box-container">
+    <div class="search-input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Gucci, Nike, Zara, Bags, Sneakers..." aria-label="Search items">
+      <button class="search-close-btn" id="search-modal-close" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-results-grid" id="search-modal-results"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toast-msg">Added to cart!</span></div>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

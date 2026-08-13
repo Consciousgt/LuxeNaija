@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us & How It Works — LuxeNaija</title>
+  <meta name="description" content="Learn how LuxeNaija brings authentic international luxury fashion to Nigeria at unbeatable prices, delivered in ≤30 days via pre-order.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="LuxeNaija Logo" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="products.html" id="nav-shop">Shop</a></li>
+      <li><a href="about.html" class="active" id="nav-about">How It Works</a></li>
+      <li><a href="about.html#faq" id="nav-faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="search-trigger-btn" aria-label="Search catalog">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-icon-btn" id="cart-btn" aria-label="View cart" onclick="location.href='cart.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="products.html">Shop</a><a href="about.html">How It Works</a><a href="cart.html">🛒 Cart</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+    <div class="section-label">Our Story</div>
+    <h1 class="section-title">Why <em>LuxeNaija</em> Exists</h1>
+    <p class="text-muted" style="margin-top:0.75rem;max-width:560px;margin-inline:auto;font-size:1rem">
+      We got tired of Nigerians being sold Aba fakes at Gucci prices. So we built something better — a direct pipeline from international brand retailers straight to your Nigerian doorstep.
+    </p>
+  </div>
+</div>
+
+<!-- MISSION SECTION -->
+<section class="about-mission section" id="mission">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <div class="section-label">Our Mission</div>
+        <h2 class="section-title">Access to <em>Real</em> Luxury<br>Should Not Be a Privilege</h2>
+        <div class="gold-divider"></div>
+        <p class="text-muted" style="margin-top:0.75rem">
+          Nigeria has 220 million people with incredible fashion taste and spending power. Yet the local market has failed them — flooded with overpriced counterfeits sold as "authentic". Meanwhile, flying abroad just to shop isn't practical for most.
+        </p>
+        <p class="text-muted" style="margin-top:1rem">
+          LuxeNaija was born in 2024 with one goal: <strong style="color:var(--white)">make authentic international fashion accessible to every Nigerian</strong>. We aggregate pre-orders, source in bulk from verified brand retailers across UK, US, Italy, and Dubai, and pass the massive savings on to you.
+        </p>
+        <p class="text-muted" style="margin-top:1rem">
+          The result? Real Gucci. Real Nike. Real Louis Vuitton — at prices you'll actually love.
+        </p>
+        <div style="display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)">5,000+</div>
+            <div style="font-size:0.82rem;color:var(--white-dim);margin-top:0.25rem">Happy Customers</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)">20+</div>
+            <div style="font-size:0.82rem;color:var(--white-dim);margin-top:0.25rem">Global Brands</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)">70%</div>
+            <div style="font-size:0.82rem;color:var(--white-dim);margin-top:0.25rem">Avg. Savings vs. Local</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)">≤30</div>
+            <div style="font-size:0.82rem;color:var(--white-dim);margin-top:0.25rem">Days Delivery</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up about-img" style="transition-delay:0.15s">
+        <img src="images/hero_banner.jpg" alt="LuxeNaija story — authentic luxury in Nigeria" style="height:100%;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS DETAILED -->
+<section class="how-it-works section" id="how-it-works" style="background:var(--surface-1)">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">How Pre-Ordering <em>Works</em></h2>
+      <div class="gold-divider" style="margin-inline:auto"></div>
+      <p class="text-muted" style="margin-top:0.5rem;max-width:480px;margin-inline:auto">
+        The pre-order model is how we keep prices impossibly low. Here's exactly what happens from click to doorstep.
+      </p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="step-title">Browse Catalog</div>
+        <p class="step-desc">Explore our curated collection of 20+ international brands. All prices are shown in Naira — no conversion headaches.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.08s">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="step-title">Place Pre-Order</div>
+        <p class="step-desc">Add items to your cart, select your size, and pay securely. We batch orders every two weeks to maximize bulk savings.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.16s">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="step-title">Batch Sourcing</div>
+        <p class="step-desc">Our agents in the UK, US, Italy & Dubai purchase items from official brand stores with receipts — guaranteeing authenticity.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.24s">
+        <div class="step-number">04</div>
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="step-title">International Shipping</div>
+        <p class="step-desc">Items are shipped via our express logistics partner from the source country into Nigeria — tracked at every step.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.32s">
+        <div class="step-number">05</div>
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="step-title">Nigeria Delivery</div>
+        <p class="step-desc">Once cleared at customs, we dispatch your order for last-mile delivery to any state in Nigeria within 2–4 days.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.4s">
+        <div class="step-number">06</div>
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="step-title">You Receive & Verify</div>
+        <p class="step-desc">Your authentic item arrives with original packaging, tags, and receipt. Verify authenticity with the brand's official app if available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHENTICITY SECTION -->
+<section class="section" id="authenticity">
+  <div class="container">
+    <div style="max-width:700px;margin-inline:auto;text-align:center">
+      <div class="section-label">Our Guarantee</div>
+      <h2 class="section-title">We Stake Our <em>Reputation</em> on Authenticity</h2>
+      <div class="gold-divider" style="margin-inline:auto"></div>
+      <p class="text-muted" style="margin-top:0.75rem;margin-bottom:2.5rem">
+        Every single item in our catalog is sourced from the official brand's retail store or authorized reseller. We provide the purchase receipt for every order. If we can't prove authenticity, you don't pay.
+      </p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:900px;margin-inline:auto">
+      <div class="glass-card" style="padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🧾</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:0.5rem">Original Receipts</div>
+        <p style="font-size:0.85rem;color:var(--white-dim);line-height:1.6">Every purchase comes with the original brand store receipt — proof of authenticity you can verify.</p>
+      </div>
+      <div class="glass-card" style="padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">📦</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:0.5rem">Original Packaging</div>
+        <p style="font-size:0.85rem;color:var(--white-dim);line-height:1.6">Items arrive in the brand's original box, dust bag, and packing — exactly as you'd receive it from the store.</p>
+      </div>
+      <div class="glass-card" style="padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">📱</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:0.5rem">App Verification</div>
+        <p style="font-size:0.85rem;color:var(--white-dim);line-height:1.6">Many brands now have authentication apps. We encourage customers to verify using official brand tools.</p>
+      </div>
+      <div class="glass-card" style="padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">💰</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:0.5rem">Full Refund Policy</div>
+        <p style="font-size:0.85rem;color:var(--white-dim);line-height:1.6">If any item is not 100% authentic, we provide an immediate full refund — no questions, no delays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" id="faq" style="background:var(--surface-1)">
+  <div class="container" style="max-width:780px">
+    <div class="section-header centered">
+      <div class="section-label">Got Questions?</div>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      <div class="gold-divider" style="margin-inline:auto"></div>
+    </div>
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0" id="faq-q1">
+          How do I know the items are actually authentic?
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 0.3s"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="faq-a" id="faq-a1">
+          All items are purchased directly from the official brand store or an authorized retailer by our agents on the ground in UK, US, Italy, or Dubai. Every order comes with the original purchase receipt. For brands with authentication apps (like some Louis Vuitton products), we provide QR codes for self-verification. We've served 5,000+ customers without a single authenticity dispute.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0" id="faq-q2">
+          Why is the delivery up to 30 days — isn't that long?
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 0.3s"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="faq-a" id="faq-a2">
+          The 30-day window is what allows us to batch orders, source in bulk, and pass the massive savings on to you. Think of it like this: you save 50–70% compared to buying the same item locally. Most customers receive their orders in 18–25 days. The maximum wait is 30 days. If we ever exceed 30 days, you get a 15% discount on your next order — guaranteed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0" id="faq-q3">
+          Is my payment safe? What if I pay and get nothing?
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 0.3s"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="faq-a" id="faq-a3">
+          Payments are processed through Paystack or Flutterwave — Nigeria's most trusted payment gateways. Your money is held securely until your order is dispatched. If for any reason we cannot fulfill your order, a full refund is processed within 48 hours. We've fulfilled 5,000+ orders with a 100% fulfillment rate since 2024.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0" id="faq-q4">
+          What is the returns policy?
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 0.3s"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="faq-a" id="faq-a4">
+          We offer full refunds if: (1) the item is not authentic, (2) the item arrives damaged, or (3) we send the wrong item. Due to the pre-order sourcing model, change-of-mind returns are not accepted. Please review your size guide carefully before ordering. We provide a sizing chart for every brand to help you choose correctly.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0" id="faq-q5">
+          Do you deliver to all states in Nigeria?
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 0.3s"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="faq-a" id="faq-a5">
+          Yes! We deliver to all 36 states and the FCT. Delivery fees are flat ₦3,500 nationwide. For Lagos and Abuja, delivery typically takes 1–2 days after the item arrives in Nigeria. For other states, allow 2–4 business days for last-mile delivery.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0" id="faq-q6">
+          Can I request a brand or product that's not in your catalog?
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 0.3s"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="faq-a" id="faq-a6">
+          Absolutely! Send us a WhatsApp message with the product details (name, size, color, the official retail price) and we'll give you a custom quote within 24 hours. Custom orders are subject to minimum pricing and may take slightly longer.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <p class="text-muted" style="margin-bottom:1.5rem">Still have questions? We're available on WhatsApp.</p>
+      <a href="#" class="btn btn-primary" id="whatsapp-cta">
+        💬 Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="padding:5rem 0;background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent 60%)">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Ready to Shop?</div>
+    <h2 class="section-title">Start Your <em>Pre-Order</em> Today</h2>
+    <div class="gold-divider" style="margin-inline:auto;margin-top:1rem;margin-bottom:1.5rem"></div>
+    <p class="text-muted" style="max-width:400px;margin-inline:auto;margin-bottom:2rem">
+      Batch 7 is currently open. Place your order before the deadline to receive your items within 30 days.
+    </p>
+    <a href="products.html" class="btn btn-primary btn-lg" id="about-cta-shop">Shop Now →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="LuxeNaija Logo" class="footer-logo-img">
+        <p class="footer-desc">Nigeria's premier destination for authentic international luxury fashion. Real brands. Unbeatable prices. Delivered to your door in ≤ 30 days.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Instagram" id="footer-instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="WhatsApp" id="footer-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="TikTok" id="footer-tiktok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Shop</div>
+        <ul>
+          <li><a href="products.html" id="footer-all">All Products</a></li>
+          <li><a href="products.html?cat=bags" id="footer-bags">Bags</a></li>
+          <li><a href="products.html?cat=sneakers" id="footer-sneakers">Sneakers</a></li>
+          <li><a href="products.html?cat=clothing" id="footer-clothing">Clothing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html" id="footer-about">About Us</a></li>
+          <li><a href="about.html#how-it-works" id="footer-how">How It Works</a></li>
+          <li><a href="about.html#faq" id="footer-faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <ul>
+          <li><a href="#" id="footer-track">Track Order</a></li>
+          <li><a href="#" id="footer-contact">Contact Us</a></li>
+          <li><a href="#" id="footer-whatsapp-support">WhatsApp Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 LuxeNaija. All rights reserved.</p>
+      <a href="products.html" class="btn-ghost">Shop Now →</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Live Search Modal -->
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true">
+  <div class="search-box-container">
+    <div class="search-input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Gucci, Nike, Zara, Bags, Sneakers..." aria-label="Search items">
+      <button class="search-close-btn" id="search-modal-close" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-results-grid" id="search-modal-results"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toast-msg"></span></div>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
