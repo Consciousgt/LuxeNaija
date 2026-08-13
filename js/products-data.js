@@ -1,226 +1,360 @@
-// ========================================================
-//  LuxeNaija — Products Data Store
-//  All product data centralized here
-// ========================================================
+/**
+ * LuxeNaija Product Catalog Data & Dynamic State Manager
+ */
 
-const PRODUCTS = [
+const DEFAULT_PRODUCTS = [
+  // ── PREMIER NEW LUXURY ADDITIONS ──
   {
     id: 1,
-    brand: "Gucci",
-    name: "GG Marmont Matelassé Shoulder Bag",
-    category: "bags",
-    gender: "women",
-    price: 185000,
-    originalPrice: 520000,
-    image: "images/product_gucci_bag.jpg",
-    badge: "hot",
-    sizes: ["One Size"],
-    colors: ["Beige", "Black", "Red"],
-    rating: 4.9,
-    reviews: 127,
-    description: "The iconic GG Marmont shoulder bag in matelassé chevron leather with antique gold-toned hardware. Features the Double G logo closure that defines Gucci's heritage aesthetic.",
-    inStock: true,
-    deliveryDays: 28
+    name: "Submariner Date 41mm Ceramic",
+    brand: "Rolex",
+    category: "accessories",
+    gender: "unisex",
+    price: 345000,
+    originalPrice: 1150000,
+    image: "images/product_rolex_submariner.jpg",
+    rating: 5.0,
+    reviews: 142,
+    deliveryDays: 21,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["41mm Oystersteel"],
+    description: "The benchmark among luxury divers' watches. Featuring a black Cerachrom bezel insert, robust Oystersteel bracelet, and self-winding calibre 3235 movement with 70-hour power reserve. Delivered with Rolex green presentation box, warranty card, and store receipt."
   },
   {
     id: 2,
-    brand: "Nike",
-    name: "Air Jordan 1 Retro High OG",
-    category: "sneakers",
-    gender: "unisex",
-    price: 62000,
-    originalPrice: 185000,
-    image: "images/product_nike_jordan.jpg",
-    badge: "hot",
-    sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
-    colors: ["University Blue/White", "Chicago Red", "Shadow"],
-    rating: 4.8,
-    reviews: 214,
-    description: "The Air Jordan 1 Retro High OG returns in the iconic University Blue colourway. Premium leather upper with the classic Nike Air cushioning for all-day comfort and iconic street style.",
-    inStock: true,
-    deliveryDays: 25
+    name: "Saddle Bag with Strap Black Grained",
+    brand: "Dior",
+    category: "bags",
+    gender: "women",
+    price: 245000,
+    originalPrice: 780000,
+    image: "images/product_dior_saddle.jpg",
+    rating: 4.9,
+    reviews: 89,
+    deliveryDays: 20,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["Medium", "Mini"],
+    description: "Maria Grazia Chiuri brings a fresh update to the iconic Saddle bag. Crafted in black grained calfskin with a magnetic 'D' stirrup clasp and antique gold-finish metal 'CD' signature on each side of the handle. Includes detachable matching shoulder strap and Christian Dior dust bag."
   },
   {
     id: 3,
-    brand: "Zara",
-    name: "Premium Tailored Blazer",
-    category: "clothing",
-    gender: "men",
-    price: 28500,
-    originalPrice: 75000,
-    image: "images/product_zara_blazer.jpg",
-    badge: "new",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Navy", "Charcoal", "Black"],
-    rating: 4.7,
-    reviews: 89,
-    description: "ZARA Man premium tailored blazer in a classic navy hue. Crafted from a sophisticated wool-blend fabric with a slim-fit silhouette and notched lapels. The definitive wardrobe essential.",
-    inStock: true,
-    deliveryDays: 22
+    name: "Classic Double Flap Bag Quilted Caviar",
+    brand: "Chanel",
+    category: "bags",
+    gender: "women",
+    price: 295000,
+    originalPrice: 920000,
+    image: "images/product_chanel_flap.jpg",
+    rating: 5.0,
+    reviews: 118,
+    deliveryDays: 22,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["Medium (25.5cm)", "Jumbo (30cm)"],
+    description: "The ultimate emblem of timeless French luxury. Crafted in black diamond-quilted caviar leather with 24K gold-plated hardware, double CC turn-lock, and woven leather chain strap. Comes with Chanel magnetic box, booklet, dust bag, and verification code."
   },
   {
     id: 4,
-    brand: "Louis Vuitton",
-    name: "Monogram Canvas Compact Wallet",
-    category: "accessories",
+    name: "Monolith Brushed Leather Combat Boots",
+    brand: "Prada",
+    category: "sneakers",
     gender: "unisex",
-    price: 145000,
-    originalPrice: 420000,
-    image: "images/product_lv_wallet.jpg",
-    badge: "hot",
-    sizes: ["One Size"],
-    colors: ["Brown Monogram"],
-    rating: 5.0,
-    reviews: 63,
-    description: "The Louis Vuitton Compact Wallet in iconic Monogram canvas features the signature LV initials and the Fleur motif. Lined in microfiber with multiple card slots and a bill compartment.",
-    inStock: true,
-    deliveryDays: 30
+    price: 185000,
+    originalPrice: 590000,
+    image: "images/product_prada_boots.jpg",
+    rating: 4.8,
+    reviews: 64,
+    deliveryDays: 24,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"],
+    description: "A bold modernist silhouette inspired by uniform design. Crafted from brushed calf leather and nylon with detachable multi-pouches featuring Prada enameled metal triangle logo. Super-lightweight lug tread block sole."
   },
   {
     id: 5,
-    brand: "Puma",
-    name: "Suede Classic XXI Sneaker",
-    category: "sneakers",
+    name: "H Au Carre Reversible Leather Belt 38mm",
+    brand: "Hermes",
+    category: "accessories",
     gender: "unisex",
-    price: 32000,
-    originalPrice: 89000,
-    image: "images/product_puma_sneaker.jpg",
-    badge: "new",
-    sizes: ["38", "39", "40", "41", "42", "43", "44"],
-    colors:["Burgundy/White", "Black/White", "Forest Green"],
-    rating: 4.6,
-    reviews: 152,
-    description: "The PUMA Suede has been a cultural staple since 1968. This latest iteration maintains the iconic silhouette with premium suede upper and the legendary Formstrip logo. Built for the streets.",
-    inStock: true,
-    deliveryDays: 20
+    price: 135000,
+    originalPrice: 420000,
+    image: "images/product_hermes_belt.jpg",
+    rating: 4.9,
+    reviews: 95,
+    deliveryDays: 18,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["85cm", "90cm", "95cm", "100cm", "105cm"],
+    description: "Reversible belt strap in Box 135 and Togo calfskin leather with iconic brushed gold-plated 'H' buckle. Hand-burnished edges and saddle-stitch craftsmanship. Includes orange presentation box and ribbon."
   },
   {
     id: 6,
+    name: "Triple S Clear Sole Chunky Sneakers",
     brand: "Balenciaga",
-    name: "Oversized Logo Hoodie",
-    category: "clothing",
+    category: "sneakers",
     gender: "unisex",
-    price: 78000,
-    originalPrice: 210000,
-    image: "images/product_balenciaga_hoodie.jpg",
-    badge: "hot",
-    sizes: ["XS", "S", "M", "L", "XL"],
-    colors: ["Washed Black", "Washed Grey"],
+    price: 165000,
+    originalPrice: 510000,
+    image: "images/product_balenciaga_triples.jpg",
     rating: 4.8,
-    reviews: 74,
-    description: "Balenciaga's signature oversized hoodie in washed black French terry cotton. Features the iconic embroidered logo across the chest. Relaxed fit with dropped shoulders — the ultimate luxury streetwear staple.",
-    inStock: true,
-    deliveryDays: 28
+    reviews: 73,
+    deliveryDays: 21,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"],
+    description: "The pioneer of luxury chunky streetwear. Features a 3-layered complex outsole with Clear Sole technology, embroidered size on the toe edge, and Balenciaga logo on the lateral side. Complete with spare laces and branded dust bag."
   },
   {
     id: 7,
-    brand: "Adidas",
-    name: "Ultraboost 23 Running Shoe",
-    category: "sneakers",
-    gender: "unisex",
-    price: 48000,
-    originalPrice: 135000,
-    image: "images/product_adidas_ultraboost.jpg",
-    badge: "new",
-    sizes: ["38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    colors: ["Triple White", "Core Black", "Cloud White/Grey"],
+    name: "GG Supreme Jacquard Zip Hooded Jacket",
+    brand: "Gucci",
+    category: "clothing",
+    gender: "men",
+    price: 175000,
+    originalPrice: 540000,
+    image: "images/product_gucci_jacket.jpg",
     rating: 4.9,
-    reviews: 198,
-    description: "The Adidas Ultraboost 23 delivers unmatched comfort with its responsive BOOST midsole and Primeknit+ upper. The Linear Energy Push system provides the most energy return of any Ultraboost yet.",
-    inStock: true,
-    deliveryDays: 22
+    reviews: 58,
+    deliveryDays: 22,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "The classic GG monogram reinterpreted on water-resistant jacquard technical fabric with signature green-and-red Web knit cuffs and custom gold zip pullers. Sourced directly from official flagship stores in Milan."
   },
   {
     id: 8,
-    brand: "Versace",
-    name: "Medusa Biggie Sunglasses",
-    category: "accessories",
-    gender: "unisex",
-    price: 95000,
-    originalPrice: 285000,
-    image: "images/product_versace_sunglasses.jpg",
-    badge: "hot",
-    sizes: ["One Size"],
-    colors: ["Gold/Grey", "Gold/Brown"],
+    name: "Loulou Medium Y-Quilted Shoulder Bag",
+    brand: "YSL",
+    category: "bags",
+    gender: "women",
+    price: 215000,
+    originalPrice: 680000,
+    image: "images/product_ysl_loulou.jpg",
     rating: 4.9,
-    reviews: 41,
-    description: "The Versace Medusa Biggie sunglasses feature the iconic Medusa medallion on the temples in gleaming gold metal. Rimless design with rectangular dark lenses. Pure Versace opulence.",
-    inStock: true,
-    deliveryDays: 26
+    reviews: 82,
+    deliveryDays: 19,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["Medium (32 x 22 cm)"],
+    description: "Supple calfskin leather featuring iconic 'Y' chevron matelassé quilting, magnetic snap closure, and brushed antique gold metal YSL monogram. Convertible sliding chain strap for shoulder or crossbody styling."
   },
+
+  // ── ESTABLISHED COLLECTION ──
   {
     id: 9,
+    name: "Marmont Matelassé Shoulder Bag",
     brand: "Gucci",
-    name: "GG Supreme Belt",
-    category: "accessories",
-    gender: "unisex",
-    price: 72000,
-    originalPrice: 195000,
-    image: "images/product_gucci_belt.jpg",
-    badge: null,
-    sizes: ["75cm", "80cm", "85cm", "90cm", "95cm", "100cm", "105cm"],
-    colors: ["GG Supreme/Gold", "GG Supreme/Silver"],
-    rating: 4.7,
-    reviews: 183,
-    description: "The Gucci GG Supreme canvas belt with the double G gold-tone buckle. A timeless Gucci signature that has dressed generations of fashion icons. Available in multiple lengths.",
-    inStock: true,
-    deliveryDays: 24
+    category: "bags",
+    gender: "women",
+    price: 195000,
+    originalPrice: 650000,
+    image: "images/product_gucci_bag.jpg",
+    rating: 4.9,
+    reviews: 84,
+    deliveryDays: 21,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["Small", "Medium"],
+    description: "Authentic Gucci GG Marmont shoulder bag in soft matelassé chevron leather with heart motif on the back. Antique gold-toned hardware, double G logo, microfiber lining with a suede-like finish. Sourced directly from Italy/UK."
   },
   {
     id: 10,
-    brand: "Burberry",
-    name: "Classic Check Wool Scarf",
-    category: "accessories",
-    gender: "unisex",
-    price: 52000,
-    originalPrice: 145000,
-    image: "images/product_gucci_bag.jpg",
-    badge: "new",
-    sizes: ["One Size"],
-    colors: ["Camel Check", "Black Check"],
+    name: "Air Jordan 1 Retro High OG 'Chicago'",
+    brand: "Nike",
+    category: "sneakers",
+    gender: "men",
+    price: 120000,
+    originalPrice: 380000,
+    image: "images/product_nike_jordan.jpg",
     rating: 4.8,
-    reviews: 96,
-    description: "The Burberry check scarf is the brand's most iconic accessory. Woven from pure merino wool in Scotland, it features the signature House check pattern that defines British luxury.",
-    inStock: true,
-    deliveryDays: 25
+    reviews: 126,
+    deliveryDays: 20,
+    isFeatured: true,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"],
+    description: "The legendary 1985 silhouette in the iconic Chicago colorway. Premium full-grain leather upper, Nike Air cushioning in the sole, original wings logo on the ankle. 100% authentic deadstock."
   },
   {
     id: 11,
-    brand: "Nike",
-    name: "Tech Fleece Jogger Set",
-    category: "clothing",
+    name: "Monogram Eclipse Canvas Slender Wallet",
+    brand: "Louis Vuitton",
+    category: "accessories",
     gender: "men",
-    price: 38000,
-    originalPrice: 105000,
-    image: "images/product_balenciaga_hoodie.jpg",
-    badge: null,
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Black", "Dark Navy", "Carbon Heather"],
-    rating: 4.6,
-    reviews: 211,
-    description: "Nike Tech Fleece jogger set in the brand's signature spacer fabric technology. Lightweight, warm, and impeccably designed — the perfect athletic-luxury blend for the modern man.",
-    inStock: true,
-    deliveryDays: 20
+    price: 85000,
+    originalPrice: 280000,
+    image: "images/product_lv_wallet.jpg",
+    rating: 4.9,
+    reviews: 93,
+    deliveryDays: 18,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["One Size"],
+    description: "Slim and sophisticated, the Slender Wallet in Monogram Eclipse coated canvas easily slips into any pocket. Features 8 credit card slots and a bill compartment with grained cowhide leather lining."
   },
   {
     id: 12,
-    brand: "Fendi",
-    name: "FF Logo Cap",
+    name: "Oversized Tailored Wool-Blend Blazer",
+    brand: "Zara",
+    category: "clothing",
+    gender: "women",
+    price: 48000,
+    originalPrice: 120000,
+    image: "images/product_zara_blazer.jpg",
+    rating: 4.7,
+    reviews: 67,
+    deliveryDays: 16,
+    isFeatured: false,
+    isSale: true,
+    batch: "Batch 7",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Straight-cut blazer featuring lapel collar and long sleeves with pronounced shoulder pads. Front flap pockets, chest welt pocket, and back central vent. Premium wool-blend texture."
+  },
+  {
+    id: 13,
+    name: "RS-X Efekt Luxury PRM Sneakers",
+    brand: "Puma",
+    category: "sneakers",
+    gender: "unisex",
+    price: 55000,
+    originalPrice: 145000,
+    image: "images/product_puma_sneaker.jpg",
+    rating: 4.6,
+    reviews: 44,
+    deliveryDays: 18,
+    isFeatured: false,
+    isSale: true,
+    batch: "Batch 7",
+    sizes: ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44"],
+    description: "Futuristic retro running aesthetic with mesh and leather overlays. Ultra-cushioned midsole for all-day comfort. Metallic gold detailing and rubber traction outsole."
+  },
+  {
+    id: 14,
+    name: "Medusa Biggie Hexagonal Sunglasses",
+    brand: "Versace",
     category: "accessories",
     gender: "unisex",
-    price: 41000,
-    originalPrice: 118000,
+    price: 98000,
+    originalPrice: 320000,
     image: "images/product_versace_sunglasses.jpg",
-    badge: "new",
-    sizes: ["S/M", "L/XL"],
-    colors: ["Black/FF", "Beige/FF"],
-    rating: 4.5,
-    reviews: 57,
-    description: "Fendi's iconic FF logo cap in technical fabric. Features the all-over Zucca FF pattern with adjustable strap. A statement accessory that signals your impeccable taste.",
-    inStock: true,
-    deliveryDays: 27
+    rating: 4.9,
+    reviews: 51,
+    deliveryDays: 19,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["Standard Fit"],
+    description: "Iconic Medusa Biggie sunglasses featuring thick black acetate frames and wide temples adorned with gold-tone heritage Medusa hardware. 100% UV protection."
+  },
+  {
+    id: 15,
+    name: "GG Leather Belt with Shiny Buckle",
+    brand: "Gucci",
+    category: "accessories",
+    gender: "unisex",
+    price: 110000,
+    originalPrice: 350000,
+    image: "images/product_gucci_belt.jpg",
+    rating: 4.9,
+    reviews: 77,
+    deliveryDays: 18,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["80cm", "85cm", "90cm", "95cm", "100cm"],
+    description: "Signature smooth black calfskin leather belt with shiny gold-toned interlocking GG buckle. Sourced from authorized retailers in Milan with original box, dust bag, and certificate."
+  },
+  {
+    id: 16,
+    name: "Ultraboost Light Running Shoes",
+    brand: "Adidas",
+    category: "sneakers",
+    gender: "men",
+    price: 72000,
+    originalPrice: 190000,
+    image: "images/product_adidas_ultraboost.jpg",
+    rating: 4.7,
+    reviews: 58,
+    deliveryDays: 18,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"],
+    description: "Lightest Ultraboost ever made with 30% lighter Light BOOST material. Continental Better Rubber outsole delivers extraordinary grip in wet and dry conditions."
+  },
+  {
+    id: 17,
+    name: "BB Logo Oversized Heavy Fleece Hoodie",
+    brand: "Balenciaga",
+    category: "clothing",
+    gender: "unisex",
+    price: 140000,
+    originalPrice: 420000,
+    image: "images/product_balenciaga_hoodie.jpg",
+    rating: 4.8,
+    reviews: 39,
+    deliveryDays: 22,
+    isFeatured: false,
+    isSale: false,
+    batch: "Batch 7",
+    sizes: ["S", "M", "L", "XL"],
+    description: "Heavyweight organic curly fleece with oversized dropped shoulder cut. Embroidered tonal BB logo on the chest and kangaroo pocket. Ribbed trims."
   }
 ];
 
-// Make available globally
-window.PRODUCTS = PRODUCTS;
+// Helper to get merged catalog (defaults + admin-created products)
+function getMergedProducts() {
+  try {
+    const custom = JSON.parse(localStorage.getItem('luxenaija_custom_products') || '[]');
+    const deletedIds = JSON.parse(localStorage.getItem('luxenaija_deleted_product_ids') || '[]');
+    
+    // Filter out deleted defaults
+    const activeDefaults = DEFAULT_PRODUCTS.filter(p => !deletedIds.includes(p.id));
+    
+    // Combine
+    return [...custom, ...activeDefaults];
+  } catch (e) {
+    return DEFAULT_PRODUCTS;
+  }
+}
+
+// Global accessor
+window.PRODUCTS = getMergedProducts();
+
+// Helper functions for Admin CRUD
+window.saveCustomProduct = function(product) {
+  const custom = JSON.parse(localStorage.getItem('luxenaija_custom_products') || '[]');
+  const existingIndex = custom.findIndex(p => p.id === product.id);
+  if (existingIndex >= 0) {
+    custom[existingIndex] = product;
+  } else {
+    custom.unshift(product);
+  }
+  localStorage.setItem('luxenaija_custom_products', JSON.stringify(custom));
+  window.PRODUCTS = getMergedProducts();
+};
+
+window.deleteProduct = function(productId) {
+  let custom = JSON.parse(localStorage.getItem('luxenaija_custom_products') || '[]');
+  custom = custom.filter(p => p.id !== productId);
+  localStorage.setItem('luxenaija_custom_products', JSON.stringify(custom));
+  
+  const deletedIds = JSON.parse(localStorage.getItem('luxenaija_deleted_product_ids') || '[]');
+  if (!deletedIds.includes(productId)) {
+    deletedIds.push(productId);
+    localStorage.setItem('luxenaija_deleted_product_ids', JSON.stringify(deletedIds));
+  }
+  window.PRODUCTS = getMergedProducts();
+};

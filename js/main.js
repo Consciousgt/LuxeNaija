@@ -441,12 +441,63 @@ function initCartPage() {
   });
 
   // Checkout form
-  document.getElementById('checkout-form')?.addEventListener('submit', (e) => {
+  const form = document.getElementById('checkout-form');
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    showToast('🎉 Order placed! We\'ll confirm via WhatsApp within 24 hours.');
+    const selectedPay = document.querySelector('.pay-method.active')?.dataset.method || 'transfer';
+
+    // Create order object for Admin tracking
+    const orderItems = cart;
+    const subtotal = getCartTotal();
+    const shipping = 3500;
+    const total = subtotal + shipping;
+    const orderId = 'LN-' + Math.floor(100000 + Math.random() * 900000);
+    
+    const newOrder = {
+      id: orderId,
+      customer: {
+        firstName: form.querySelector('#first-name').value.trim(),
+        lastName: form.querySelector('#last-name').value.trim(),
+        phone: form.querySelector('#phone').value.trim(),
+        email: form.querySelector('#email').value.trim(),
+        address: form.querySelector('#address').value.trim(),
+        state: form.querySelector('#state').value,
+        city: form.querySelector('#city').value.trim()
+      },
+      items: orderItems,
+      subtotal: subtotal,
+      shipping: shipping,
+      total: total,
+      paymentMethod: selectedPay,
+      status: 'Payment Confirmed',
+      batch: 'Batch 7',
+      createdAt: new Date().toISOString()
+    };
+
+    try {
+      const existingOrders = JSON.parse(localStorage.getItem('luxenaija_orders') || '[]');
+      existingOrders.unshift(newOrder);
+      localStorage.setItem('luxenaija_orders', JSON.stringify(existingOrders));
+    } catch(err) {
+      console.error('Failed to record order', err);
+    }
+
     setTimeout(() => {
       cart = [];
       saveCart();
+      const name = form.querySelector('#first-name').value.trim();
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;animation:fadeIn 0.3s ease';
+      modal.innerHTML = `
+        <div style="background:#161616;border:1px solid #c9a84c;border-radius:16px;padding:2.5rem;max-width:480px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.8),0 0 30px rgba(201,168,76,0.2)">
+          <div style="font-size:3rem;margin-bottom:1rem">🎉</div>
+          <h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#f5f5f5;margin-bottom:0.5rem">Pre-Order Placed!</h2>
+          <p style="color:#c9a84c;font-weight:600;margin-bottom:1rem">Order Reference: #${orderId}</p>
+          <p style="color:#888;font-size:0.9rem;line-height:1.6;margin-bottom:1.5rem">Thank you, <strong style="color:#f5f5f5">${name}</strong>! Your items are secured in Batch 7. You will receive WhatsApp updates within 24 hours.</p>
+          <a href="index.html" class="btn btn-primary btn-lg" style="display:inline-block;width:100%">Return to Home</a>
+        </div>
+      `;
+      document.body.appendChild(modal);
       renderCart();
     }, 2000);
   });
