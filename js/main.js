@@ -303,7 +303,7 @@ function initFeaturedGrid() {
 
 // ── Products Page Filtering & Sorting ──
 let allProducts = [];
-let activeFilters = { brands: [], categories: [], minPrice: 0, maxPrice: Infinity };
+let activeFilters = { brands: [], categories: [], genders: [], minPrice: 0, maxPrice: Infinity };
 let activeSortBy = 'featured';
 
 function initProductsPage() {
@@ -366,6 +366,16 @@ function initFilterListeners() {
     });
   });
 
+  document.querySelectorAll('input.filter-gender').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const value = this.value;
+      if (this.checked && !activeFilters.genders.includes(value)) activeFilters.genders.push(value);
+      if (!this.checked) activeFilters.genders = activeFilters.genders.filter(g => g !== value);
+      renderFilteredCatalog();
+      updateFilterChips();
+    });
+  });
+
   const minInput = document.getElementById('price-min');
   const maxInput = document.getElementById('price-max');
   if (minInput) minInput.addEventListener('input', () => {
@@ -388,8 +398,8 @@ function initFilterListeners() {
 }
 
 function clearFilters() {
-  activeFilters = { brands: [], categories: [], minPrice: 0, maxPrice: Infinity };
-  document.querySelectorAll('input[data-brand], input.filter-brand, input[data-cat], input.filter-cat').forEach(cb => cb.checked = false);
+  activeFilters = { brands: [], categories: [], genders: [], minPrice: 0, maxPrice: Infinity };
+  document.querySelectorAll('input[data-brand], input.filter-brand, input[data-cat], input.filter-cat, input.filter-gender').forEach(cb => cb.checked = false);
   const minInput = document.getElementById('price-min');
   const maxInput = document.getElementById('price-max');
   if (minInput) minInput.value = '';
@@ -412,6 +422,9 @@ function renderFilteredCatalog() {
   if (activeFilters.categories.length > 0) {
     list = list.filter(p => activeFilters.categories.some(c => c.toLowerCase() === (p.category || '').toLowerCase()));
   }
+  if (activeFilters.genders.length > 0) {
+    list = list.filter(p => activeFilters.genders.includes(p.gender));
+  }
 
   list = list.filter(p => p.price >= activeFilters.minPrice && p.price <= activeFilters.maxPrice);
 
@@ -420,6 +433,7 @@ function renderFilteredCatalog() {
     case 'price-desc': list.sort((a,b) => b.price - a.price); break;
     case 'savings': list.sort((a,b) => savingsPercent(b.price, b.originalPrice) - savingsPercent(a.price, a.originalPrice)); break;
     case 'newest': list.sort((a,b) => b.id - a.id); break;
+    case 'rating': list.sort((a,b) => (b.rating || 0) - (a.rating || 0)); break;
     default: list.sort((a,b) => (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0));
   }
 
@@ -451,6 +465,7 @@ function updateFilterChips() {
   const chips = [];
   activeFilters.brands.forEach(b => chips.push({ label: b, type: 'brand', val: b }));
   activeFilters.categories.forEach(c => chips.push({ label: c.toUpperCase(), type: 'cat', val: c }));
+  activeFilters.genders.forEach(g => chips.push({ label: g, type: 'gender', val: g }));
 
   if (!chips.length) { area.innerHTML = ''; return; }
 
@@ -471,9 +486,12 @@ function removeFilterChip(type, val) {
   if (type === 'brand') {
     activeFilters.brands = activeFilters.brands.filter(b => b.toLowerCase() !== val.toLowerCase());
     document.querySelectorAll(`input[data-brand="${val}"], input.filter-brand[value="${val}"]`).forEach(cb => cb.checked = false);
-  } else {
+  } else if (type === 'cat') {
     activeFilters.categories = activeFilters.categories.filter(c => c.toLowerCase() !== val.toLowerCase());
     document.querySelectorAll(`input[data-cat="${val}"], input.filter-cat[value="${val}"]`).forEach(cb => cb.checked = false);
+  } else {
+    activeFilters.genders = activeFilters.genders.filter(g => g !== val);
+    document.querySelectorAll(`input.filter-gender[value="${val}"]`).forEach(cb => cb.checked = false);
   }
   renderFilteredCatalog();
   updateFilterChips();

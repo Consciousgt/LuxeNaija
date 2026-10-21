@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop All Products — LuxeNaija</title>
-  <meta name="description" content="Browse authentic Gucci, Zara, Puma, Nike, Louis Vuitton & more. Pre-order and get delivered to Nigeria in ≤30 days at unbeatable prices.">
+  <title>Watch Edit & Luxury Fashion — LuxeNaija</title>
+  <meta name="description" content="Explore the LuxeNaija Watch Edit: considered watches and luxury fashion delivered nationwide.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
@@ -69,10 +69,10 @@
 <div class="page-hero" id="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Shop</span></div>
-    <div class="section-label">Pre-Order Collection</div>
-    <h1 class="section-title">Shop <em>All Products</em></h1>
+    <div class="section-label">The Watch Edit</div>
+    <h1 class="section-title">Find your <em>next watch</em></h1>
     <p class="text-muted" style="margin-top:0.75rem;max-width:480px;margin-inline:auto">
-      Authentic international luxury fashion. Pre-order today, delivered to your door in ≤ 30 days.
+      A considered watch collection alongside luxury fashion. Shop by style, price, and occasion.
     </p>
   </div>
 </div>
@@ -86,6 +86,7 @@
 
       <div class="filter-block">
         <div class="filter-block-title">Brand</div>
+        <label class="filter-check"><input type="checkbox" class="filter-brand" value="LuxeNaija"> LuxeNaija Watch Edit</label>
         <label class="filter-check"><input type="checkbox" class="filter-brand" value="Rolex"> Rolex</label>
         <label class="filter-check"><input type="checkbox" class="filter-brand" value="Dior"> Dior</label>
         <label class="filter-check"><input type="checkbox" class="filter-brand" value="Chanel"> Chanel</label>
@@ -107,7 +108,8 @@
         <label class="filter-check"><input type="checkbox" class="filter-cat" value="bags"> Bags & Purses <span class="filter-check-count">2</span></label>
         <label class="filter-check"><input type="checkbox" class="filter-cat" value="sneakers"> Sneakers <span class="filter-check-count">4</span></label>
         <label class="filter-check"><input type="checkbox" class="filter-cat" value="clothing"> Clothing <span class="filter-check-count">3</span></label>
-        <label class="filter-check"><input type="checkbox" class="filter-cat" value="accessories"> Accessories <span class="filter-check-count">5</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="accessories"> Accessories</label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="watches"> Watches <span class="filter-check-count">18</span></label>
       </div>
 
       <div class="filter-block">
@@ -119,13 +121,7 @@
 
       <div class="filter-block">
         <div class="filter-block-title">Max Price</div>
-        <div class="price-range">
-          <input type="range" id="price-range" min="20000" max="300000" value="300000" step="5000" aria-label="Maximum price">
-          <div class="price-range-labels">
-            <span>₦20,000</span>
-            <span id="price-max-label">₦300,000</span>
-          </div>
-        </div>
+        <div class="price-range"><input type="number" id="price-min" min="0" placeholder="Min ₦" aria-label="Minimum price"><input type="number" id="price-max" min="0" placeholder="Max ₦" aria-label="Maximum price"></div>
       </div>
 
     </aside>
@@ -133,16 +129,16 @@
     <!-- ── PRODUCTS AREA ── -->
     <div>
       <div class="catalog-toolbar">
-        <div class="catalog-count"><span id="product-count">0</span> products found</div>
+        <div class="catalog-count" id="products-count">Loading collection…</div>
         <select class="sort-select" id="sort-select" aria-label="Sort products">
           <option value="featured">Featured</option>
           <option value="price-asc">Price: Low to High</option>
           <option value="price-desc">Price: High to Low</option>
           <option value="savings">Biggest Savings</option>
-          <option value="rating">Best Rated</option>
+          <option value="newest">Newest arrivals</option>
         </select>
       </div>
-      <div class="products-grid" id="products-grid">
+      <div id="active-filters"></div><div class="products-grid" id="products-grid">
         <!-- Injected by JS -->
       </div>
     </div>
