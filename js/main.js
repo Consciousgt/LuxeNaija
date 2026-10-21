@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 //  LuxeNaija — Main Application Controller (main.js)
 //  Myntra-Standard Catalog, Watch Showcase, Filters & Checkout
 // ============================================================
@@ -1152,7 +1152,124 @@ function initLiveSearch() {
   });
 }
 
-// ── Bootstrapper ──
+
+// ===== Mobile Catalog Controls (Filter Drawer + Sort Sheet + Hamburger) =====
+function initMobileCatalogControls() {
+  const sidebar    = document.getElementById('filter-sidebar');
+  const backdrop   = document.getElementById('filter-drawer-backdrop');
+  const openFilter = document.getElementById('open-filter-btn');
+  const closeFilter= document.getElementById('close-filter-drawer');
+  const applyBtn   = document.getElementById('mobile-apply-btn');
+  const clearMob   = document.getElementById('mobile-clear-btn');
+  const badge      = document.getElementById('mobile-filter-badge');
+  const sortSheet  = document.getElementById('sort-sheet-overlay');
+  const openSort   = document.getElementById('open-sort-btn');
+  const closeSort  = document.getElementById('close-sort-sheet');
+  const sortSelect = document.getElementById('sort-select');
+
+  function openDrawer() {
+    if (sidebar)  sidebar.classList.add('drawer-open');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    if (sidebar)  sidebar.classList.remove('drawer-open');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function openSortSheet() {
+    if (sortSheet) sortSheet.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSortSheet() {
+    if (sortSheet) sortSheet.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function updateFilterBadge() {
+    if (!badge) return;
+    const checked = document.querySelectorAll(
+      '.filter-cat:checked, .filter-strap:checked, .filter-movement:checked, .filter-gender:checked'
+    ).length;
+    const priceRadio = document.querySelector('.price-bracket-radio:checked');
+    const discountRadio = document.querySelector('.filter-discount:checked');
+    let extra = 0;
+    if (priceRadio && priceRadio.value !== 'all') extra++;
+    if (discountRadio && discountRadio.value !== '0') extra++;
+    const total = checked + extra;
+    if (total > 0) {
+      badge.textContent = total;
+      badge.style.display = 'inline-flex';
+    } else {
+      badge.style.display = 'none';
+    }
+  }
+
+  if (openFilter)  openFilter.addEventListener('click', openDrawer);
+  if (closeFilter) closeFilter.addEventListener('click', closeDrawer);
+  if (backdrop)    backdrop.addEventListener('click', closeDrawer);
+  if (applyBtn)    applyBtn.addEventListener('click', closeDrawer);
+  if (clearMob)    clearMob.addEventListener('click', () => {
+    const clearBtn = document.getElementById('clear-filters');
+    if (clearBtn) clearBtn.click();
+    updateFilterBadge();
+  });
+
+  if (openSort) openSort.addEventListener('click', openSortSheet);
+  if (closeSort) closeSort.addEventListener('click', closeSortSheet);
+  if (sortSheet) sortSheet.addEventListener('click', e => { if (e.target === sortSheet) closeSortSheet(); });
+
+  // Mobile sort radio -> sync desktop select
+  document.querySelectorAll('input[name="mobile-sort"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (!radio.checked) return;
+      if (sortSelect) {
+        sortSelect.value = radio.value;
+        sortSelect.dispatchEvent(new Event('change'));
+      }
+      closeSortSheet();
+    });
+  });
+
+  // Sync desktop sort select -> mobile radio
+  if (sortSelect) {
+    sortSelect.addEventListener('change', () => {
+      const r = document.querySelector(`input[name="mobile-sort"][value="${sortSelect.value}"]`);
+      if (r) r.checked = true;
+    });
+  }
+
+  // Update badge whenever a filter changes
+  document.querySelectorAll(
+    '.filter-cat, .filter-strap, .filter-movement, .filter-gender, .price-bracket-radio, .filter-discount'
+  ).forEach(el => el.addEventListener('change', updateFilterBadge));
+
+  updateFilterBadge();
+}
+
+// ===== Hamburger Nav Menu =====
+function initHamburger() {
+  const ham    = document.getElementById('hamburger');
+  const menu   = document.getElementById('mobile-menu');
+  const closeB = document.getElementById('mobile-menu-close');
+  if (!ham || !menu) return;
+
+  function openMenu() {
+    menu.classList.add('open');
+    ham.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    ham.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  ham.addEventListener('click', openMenu);
+  if (closeB) closeB.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+}
+
+// ===== Bootstrapper =====
 document.addEventListener('DOMContentLoaded', function() {
   updateCartCount();
   initLiveSearch();
@@ -1161,6 +1278,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initProductsPage();
   initProductDetailPage();
   initCartPage();
+  initHamburger();
+  initMobileCatalogControls();
 });
 
 window.addToCart = addToCart;
@@ -1176,3 +1295,5 @@ window.formatPrice = formatPrice;
 window.filterHomeWatches = filterHomeWatches;
 window.selectDetailSize = selectDetailSize;
 window.setDetailThumb = setDetailThumb;
+
+
