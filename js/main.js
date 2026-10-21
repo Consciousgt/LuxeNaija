@@ -298,11 +298,13 @@ function initFeaturedGrid() {
   if (!grid) return;
 
   const products = window.PRODUCTS || [];
-  // Featured non-watch luxury or premier mix
-  const featured = products.filter(p => p.isFeatured && p.category !== 'watches').slice(0, 8);
-  const itemsToRender = featured.length ? featured : products.slice(0, 8);
-
-  grid.innerHTML = itemsToRender.map(renderProductCard).join('');
+  // Balanced multi-functional showcase: bags, sneakers, perfumes, clothing, accessories, and premier watches
+  let featured = products.filter(p => p.isFeatured);
+  if (!featured.length) {
+    featured = products.slice(0, 8);
+  }
+  // Sort to ensure diverse cross-category representation
+  grid.innerHTML = featured.slice(0, 8).map(renderProductCard).join('');
 
   if (window.LuxeAnim) {
     window.LuxeAnim.initStaggerGrids();
@@ -371,6 +373,37 @@ let activeFilters = {
 };
 let activeSortBy = 'featured';
 
+
+function filterByCategory(cat, pillEl) {
+  if (pillEl) {
+    document.querySelectorAll('#category-pills-bar .brand-pill').forEach(p => p.classList.remove('active'));
+    pillEl.classList.add('active');
+  }
+
+  document.querySelectorAll('.filter-cat').forEach(cb => {
+    if (cat === 'all') {
+      cb.checked = false;
+    } else {
+      cb.checked = (cb.value.toLowerCase() === cat.toLowerCase());
+    }
+  });
+
+  if (cat === 'all') {
+    activeFilters.categories = [];
+  } else {
+    activeFilters.categories = [cat.toLowerCase()];
+  }
+
+  const bc = document.getElementById('catalog-breadcrumb-current');
+  if (bc) {
+    bc.textContent = cat === 'all' ? 'All Products' : (cat === 'watches' ? "Men's Watches" : cat.toUpperCase());
+  }
+
+  renderFilteredCatalog();
+  updateFilterChips();
+}
+window.filterByCategory = filterByCategory;
+
 function initProductsPage() {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
@@ -407,10 +440,11 @@ function buildDynamicBrandFilter() {
 }
 
 function updateCategoryCounts() {
-  const catCounts = { watches: 0, bags: 0, sneakers: 0, clothing: 0, accessories: 0 };
+  const catCounts = { watches: 0, bags: 0, sneakers: 0, clothing: 0, accessories: 0, perfumes: 0 };
   allProducts.forEach(p => {
     const c = (p.category || '').toLowerCase();
     if (catCounts[c] !== undefined) catCounts[c]++;
+    else catCounts[c] = 1;
   });
 
   for (const cat in catCounts) {
@@ -861,16 +895,65 @@ function initProductDetailPage() {
   // Specifications Grid (Myntra Standard)
   const specsGrid = document.getElementById('specs-grid');
   if (specsGrid) {
-    const specs = [
-      { label: 'Brand', val: product.brand },
-      { label: 'Category', val: (product.category || 'Timepieces').toUpperCase() },
-      { label: 'Movement / Mechanism', val: product.movement || 'Quartz / Automatic' },
-      { label: 'Strap Material', val: product.strapMaterial || 'Stainless Steel / Leather' },
-      { label: 'Dial Shape', val: product.dialShape || 'Round' },
-      { label: 'Water Resistance', val: product.waterResistance || '50m (5 ATM)' },
-      { label: 'Warranty Period', val: product.warranty || '2 Years International Warranty' },
-      { label: 'Authenticity Certificate', val: 'Official Box & Serial Verification Included' }
-    ];
+    let specs = [];
+    const cat = (product.category || '').toLowerCase();
+    if (cat === 'watches') {
+      specs = [
+        { label: 'Brand', val: product.brand },
+        { label: 'Model / Reference', val: product.sku || 'N/A' },
+        { label: 'Movement / Caliber', val: product.movement || 'Quartz' },
+        { label: 'Case Diameter', val: product.caseDiameter || '42 mm' },
+        { label: 'Strap Material', val: product.strapMaterial || 'Stainless Steel' },
+        { label: 'Dial Shape', val: product.dialShape || 'Round' },
+        { label: 'Water Resistance', val: product.waterResistance || '50m (5 ATM)' },
+        { label: 'Official Warranty', val: product.warranty || '2 Years International Brand Warranty' },
+        { label: 'Authenticity Certificate', val: 'Official Brand Box & Serial Verification Included' }
+      ];
+    } else if (cat === 'bags') {
+      specs = [
+        { label: 'Brand', val: product.brand },
+        { label: 'Model', val: product.name },
+        { label: 'Material', val: product.material || 'Genuine Calfskin Leather' },
+        { label: 'Dimensions', val: product.dimensions || '25 x 16 x 7 cm' },
+        { label: 'Hardware', val: product.hardware || 'Gold-Tone Metal' },
+        { label: 'Origin', val: 'Direct European Boutique Sourcing' },
+        { label: 'Packaging', val: 'Original Dustbag, Serial & Authentication Cards' }
+      ];
+    } else if (cat === 'sneakers') {
+      specs = [
+        { label: 'Brand', val: product.brand },
+        { label: 'Silhouette', val: product.name },
+        { label: 'Upper Material', val: product.material || 'Premium Leather & Mesh' },
+        { label: 'Cushioning Sole', val: 'High-Response Cushioned Cupsole' },
+        { label: 'Sizing Standard', val: 'EU / UK Sizing' },
+        { label: 'Packaging', val: 'Original Retail Box, Extra Laces & Tags' }
+      ];
+    } else if (cat === 'clothing') {
+      specs = [
+        { label: 'Brand', val: product.brand },
+        { label: 'Style / Fit', val: 'Contemporary Luxury Fit' },
+        { label: 'Fabric Composition', val: product.material || '100% Organic French Terry Cotton' },
+        { label: 'Care Instructions', val: 'Dry Clean or Gentle Machine Wash Cold' },
+        { label: 'Origin', val: 'Authentic European Retail Flagship' }
+      ];
+    } else if (cat === 'perfumes') {
+      specs = [
+        { label: 'Brand House', val: product.brand },
+        { label: 'Concentration', val: product.concentration || 'Eau de Parfum' },
+        { label: 'Volume', val: product.volume || '70 ml / 2.4 fl.oz' },
+        { label: 'Olfactory Notes', val: product.notes || 'Amber, Wood, Spices' },
+        { label: 'Longevity / Sillage', val: 'Extremely Long-Lasting (12+ Hours)' },
+        { label: 'Packaging', val: '100% Factory-Sealed Presentation Box' }
+      ];
+    } else {
+      specs = [
+        { label: 'Brand', val: product.brand },
+        { label: 'Category', val: (product.category || 'Luxury Goods').toUpperCase() },
+        { label: 'Material', val: product.material || 'Fine Calfskin / Metal Alloy' },
+        { label: 'Hardware / Details', val: product.hardware || 'Polished Finish' },
+        { label: 'Packaging', val: 'Signature Brand Presentation Box' }
+      ];
+    }
 
     specsGrid.innerHTML = specs.map(s => `
       <div class="spec-box">
@@ -1297,3 +1380,5 @@ window.selectDetailSize = selectDetailSize;
 window.setDetailThumb = setDetailThumb;
 
 
+
+window.filterByCategory = filterByCategory;

@@ -42,12 +42,15 @@
     <a href="index.html" class="nav-logo">
       <img src="images/logo.jpg" alt="LuxeNaija Logo" class="nav-logo-img">
     </a>
-    <ul class="nav-links">
+        <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
-      <li><a href="products.html?cat=watches" id="nav-watches">Watches</a></li>
+      <li><a href="products.html?cat=watches" id="nav-watches" class="nav-link-badge">Watches <span>50+</span></a></li>
+      <li><a href="products.html?cat=bags" id="nav-bags">Bags & Purses</a></li>
+      <li><a href="products.html?cat=sneakers" id="nav-sneakers">Sneakers</a></li>
+      <li><a href="products.html?cat=clothing" id="nav-clothing">Clothing</a></li>
+      <li><a href="products.html?cat=accessories" id="nav-accessories">Accessories</a></li>
+      <li><a href="products.html?cat=perfumes" id="nav-perfumes">Fragrances</a></li>
       <li><a href="products.html" id="nav-shop">Shop All</a></li>
-      <li><a href="about.html" class="active" id="nav-about">How It Works</a></li>
-      <li><a href="about.html#faq" id="nav-faq">FAQ</a></li>
     </ul>
     <div class="nav-actions">
       <button class="nav-icon-btn" id="search-trigger-btn" aria-label="Search catalog">
@@ -61,10 +64,18 @@
     </div>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
-  <a href="index.html">Home</a><a href="products.html?cat=watches">⌚ Men's Watches</a>
-  <a href="products.html">Shop All</a><a href="about.html">How It Works</a><a href="cart.html">🛒 Cart</a>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">🏠 Home</a>
+  <a href="products.html?cat=watches">⌚ Luxury Watches (50+)</a>
+  <a href="products.html?cat=bags">👜 Designer Bags & Purses</a>
+  <a href="products.html?cat=sneakers">👟 Exclusive Sneakers</a>
+  <a href="products.html?cat=clothing">👕 High Fashion & Clothing</a>
+  <a href="products.html?cat=accessories">💍 Jewelry & Designer Belts</a>
+  <a href="products.html?cat=perfumes">✨ Luxury Fragrances</a>
+  <a href="products.html">🛍️ Shop All Products</a>
+  <a href="about.html">ℹ️ How It Works</a>
+  <a href="cart.html">🛒 View Cart</a>
 </div>
 
 <!-- PAGE HERO -->

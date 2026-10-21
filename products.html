@@ -43,10 +43,13 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
-      <li><a href="products.html?cat=watches" id="nav-watches" class="nav-link-badge">Watches <span>NEW</span></a></li>
+      <li><a href="products.html?cat=watches" id="nav-watches" class="nav-link-badge">Watches <span>50+</span></a></li>
+      <li><a href="products.html?cat=bags" id="nav-bags">Bags & Purses</a></li>
+      <li><a href="products.html?cat=sneakers" id="nav-sneakers">Sneakers</a></li>
+      <li><a href="products.html?cat=clothing" id="nav-clothing">Clothing</a></li>
+      <li><a href="products.html?cat=accessories" id="nav-accessories">Accessories</a></li>
+      <li><a href="products.html?cat=perfumes" id="nav-perfumes">Fragrances</a></li>
       <li><a href="products.html" class="active" id="nav-shop">Shop All</a></li>
-      <li><a href="about.html" id="nav-about">How It Works</a></li>
-      <li><a href="about.html#faq" id="nav-faq">FAQ</a></li>
     </ul>
     <div class="nav-actions">
       <button class="nav-icon-btn" id="search-trigger-btn" aria-label="Search catalog">
@@ -62,12 +65,17 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-menu-close" id="mobile-menu-close">âœ•</button>
-  <a href="index.html">Home</a>
-  <a href="products.html?cat=watches">âŒš Men's Watches</a>
-  <a href="products.html">Shop All Products</a>
-  <a href="about.html">How It Works</a>
-  <a href="cart.html">ðŸ›’ Cart</a>
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">🏠 Home</a>
+  <a href="products.html?cat=watches">⌚ Luxury Watches (50+)</a>
+  <a href="products.html?cat=bags">👜 Designer Bags & Purses</a>
+  <a href="products.html?cat=sneakers">👟 Exclusive Sneakers</a>
+  <a href="products.html?cat=clothing">👕 High Fashion & Clothing</a>
+  <a href="products.html?cat=accessories">💍 Jewelry & Designer Belts</a>
+  <a href="products.html?cat=perfumes">✨ Luxury Fragrances</a>
+  <a href="products.html">🛍️ Shop All Products</a>
+  <a href="about.html">ℹ️ How It Works</a>
+  <a href="cart.html">🛒 View Cart</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -86,6 +94,16 @@
 <div class="container">
 
   <!-- â”€â”€ QUICK BRAND SELECTION PILLS (Myntra Standard) â”€â”€ -->
+    <!-- Category Quick Selector (Multifunctional Hub) -->
+  <div class="brand-pills-bar" id="category-pills-bar" style="margin-bottom:0.6rem" aria-label="Quick category selector">
+    <div class="brand-pill active" onclick="filterByCategory('all', this)">🛍️ All Categories</div>
+    <div class="brand-pill" onclick="filterByCategory('watches', this)">⌚ Watches (53)</div>
+    <div class="brand-pill" onclick="filterByCategory('bags', this)">👜 Bags & Purses (5)</div>
+    <div class="brand-pill" onclick="filterByCategory('sneakers', this)">👟 Sneakers (5)</div>
+    <div class="brand-pill" onclick="filterByCategory('clothing', this)">👕 Clothing (3)</div>
+    <div class="brand-pill" onclick="filterByCategory('accessories', this)">💍 Accessories (3)</div>
+    <div class="brand-pill" onclick="filterByCategory('perfumes', this)">✨ Fragrances (3)</div>
+  </div>
   <div class="brand-pills-bar" id="brand-pills-bar" aria-label="Quick brand filters">
     <div class="brand-pill active" data-brand-filter="ALL">All Products</div>
     <div class="brand-pill" data-brand-filter="CASIO">CASIO G-Shock</div>
@@ -127,7 +145,8 @@
         <label class="filter-check"><input type="checkbox" class="filter-cat" value="bags"> Bags & Purses <span class="filter-check-count" id="count-cat-bags">4</span></label>
         <label class="filter-check"><input type="checkbox" class="filter-cat" value="sneakers"> Sneakers & Shoes <span class="filter-check-count" id="count-cat-sneakers">4</span></label>
         <label class="filter-check"><input type="checkbox" class="filter-cat" value="clothing"> Clothing <span class="filter-check-count" id="count-cat-clothing">3</span></label>
-        <label class="filter-check"><input type="checkbox" class="filter-cat" value="accessories"> Accessories <span class="filter-check-count" id="count-cat-accessories">4</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="accessories"> Accessories & Jewelry <span class="filter-check-count" id="count-cat-accessories">3</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="perfumes"> Fragrances & Perfumes <span class="filter-check-count" id="count-cat-perfumes">3</span></label>
       </div>
 
       <!-- Brand Filter with Search -->
