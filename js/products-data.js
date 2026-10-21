@@ -314,15 +314,15 @@ const DEFAULT_PRODUCTS = [
   },
   // ── WATCH EDIT: curated independently for LuxeNaija ──
   ...[
-    [18, "Aster Chronograph", "LuxeNaija", "men", 98000, 148000, "42mm / Steel", "new"],
-    [19, "Monarch Automatic", "LuxeNaija", "men", 156000, 225000, "40mm / Steel", "hot"],
-    [20, "Sable Moonphase", "LuxeNaija", "women", 135000, 195000, "36mm / Gold tone", "new"],
-    [21, "Coastline Diver", "LuxeNaija", "men", 112000, 169000, "43mm / Steel", ""],
-    [22, "Noir Square Classic", "LuxeNaija", "unisex", 87000, 126000, "34mm / Black", ""],
-    [23, "Verde GMT", "LuxeNaija", "men", 129000, 188000, "41mm / Steel", "hot"],
-    [24, "Celeste Mini", "LuxeNaija", "women", 76000, 109000, "30mm / Silver tone", "new"],
-    [25, "Heritage Roman", "LuxeNaija", "unisex", 94000, 137000, "38mm / Leather", ""],
-    [26, "Atlas Sport", "LuxeNaija", "men", 119000, 178000, "44mm / Steel", ""],
+    [18, "Bandhan Quartz Analog Silver Dial Couple Watch", "Titan", "unisex", 98000, 148000, "Couple set", "new"],
+    [19, "Men Chronograph Watch with Bracelet Gift Set", "Armani Exchange", "men", 156000, 225000, "AX7163SET", "hot"],
+    [20, "Bandhan Quartz Analog White Dial Couple Watch", "Titan", "unisex", 135000, 195000, "Couple set", "new"],
+    [21, "Bandhan Quartz Analog Anthracite Dial Couple Watch", "Titan", "unisex", 112000, 169000, "Couple set", ""],
+    [22, "Bandhan Multifunction Blue Dial Couple Watch", "Titan", "unisex", 87000, 126000, "Couple set", ""],
+    [23, "Bandhan Quartz Analog Silver Dial Couple Watch", "Titan", "unisex", 129000, 188000, "Couple set", "hot"],
+    [24, "Bandhan Quartz Analog Two-Toned Couple Watch", "Titan", "unisex", 76000, 109000, "Couple set", "new"],
+    [25, "Bandhan His & Her White Analogue Watch Set", "Titan", "unisex", 94000, 137000, "Couple set", ""],
+    [26, "Men Analogue Watch with Chain Gift Set", "Armani Exchange", "men", 119000, 178000, "AX7160SET", ""],
     [27, "Solstice Mesh", "LuxeNaija", "women", 82000, 121000, "34mm / Rose gold", ""],
     [28, "Eclipse Skeleton", "LuxeNaija", "men", 172000, 249000, "42mm / Steel", "hot"],
     [29, "Regent Leather", "LuxeNaija", "unisex", 71000, 105000, "38mm / Leather", ""],
@@ -334,7 +334,13 @@ const DEFAULT_PRODUCTS = [
     [35, "Mosaic Bracelet Watch", "LuxeNaija", "unisex", 105000, 154000, "36mm / Steel", ""]
   ].map(([id, name, brand, gender, price, originalPrice, size, badge], index) => ({
     id, name, brand, category: "watches", gender, price, originalPrice,
-    image: "images/watch-studio.svg", rating: 4.7 + (index % 3) / 10,
+    image: [
+      "images/myntra-watches/titan-silver-couple.jpg", "images/myntra-watches/armani-ax7163set.jpg",
+      "images/myntra-watches/titan-white-couple.jpg", "images/myntra-watches/titan-anthracite.jpg",
+      "images/myntra-watches/titan-blue-couple.jpg", "images/myntra-watches/titan-classic-couple.jpg",
+      "images/myntra-watches/titan-two-tone.jpg", "images/myntra-watches/titan-his-her.jpg",
+      "images/myntra-watches/armani-ax7160set.jpg"
+    ][index % 9], rating: 4.7 + (index % 3) / 10,
     reviews: 19 + index * 7, deliveryDays: 12 + (index % 6), isFeatured: index < 8,
     isSale: index % 5 === 0, badge, batch: "Watch Edit", sizes: [size],
     description: `A refined ${name.toLowerCase()} selected for the LuxeNaija Watch Edit. Includes presentation packaging and a 12-month LuxeNaija service guarantee.`
