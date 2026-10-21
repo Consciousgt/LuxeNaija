@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LuxeNaija — Authentic International Fashion, Delivered to Nigeria</title>
-  <meta name="description" content="Pre-order 100% authentic Gucci, Zara, Puma, Louis Vuitton, Nike & more — delivered to your door in Nigeria within 30 days at unbeatable prices.">
-  <meta name="keywords" content="luxury fashion Nigeria, buy Gucci Nigeria, authentic brands Nigeria, Zara Nigeria, pre-order fashion Nigeria">
-  <meta property="og:title" content="LuxeNaija — Authentic International Fashion">
-  <meta property="og:description" content="Get authentic Gucci, Zara, Puma & more in Nigeria at prices you'll love. Pre-order & receive in ≤30 days.">
+  <title>LuxeNaija — Authentic International Watches & Luxury Fashion in Nigeria</title>
+  <meta name="description" content="Shop authentic Casio, Fossil, Titan, Emporio Armani, Michael Kors, Ferragamo, Timex, Gucci, Nike & designer fashion. Direct global sourcing delivered to Nigeria in ≤30 days.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
@@ -26,16 +23,12 @@
 <!-- Promo Bar -->
 <div class="promo-bar" aria-label="Promotions">
   <div class="promo-track" id="promo-track">
-    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Before It Closes!</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Watches & Designer Wear Before It Closes!</div>
+    <div class="promo-item"><span class="promo-dot"></span> ⌚ Men's Watches: Casio, Fossil, Titan, Emporio Armani, Michael Kors & Ferragamo</div>
     <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Delivery on Orders Above ₦150,000</div>
-    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts Included</div>
+    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts & Warranty Cards Included</div>
     <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Market Prices</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, PH & More</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Before It Closes!</div>
-    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Delivery on Orders Above ₦150,000</div>
-    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts Included</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Market Prices</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, PH & More</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, Port Harcourt & More</div>
   </div>
 </div>
 
@@ -47,7 +40,8 @@
     </a>
     <ul class="nav-links" role="navigation" aria-label="Main navigation">
       <li><a href="index.html" class="active" id="nav-home">Home</a></li>
-      <li><a href="products.html" id="nav-shop">Shop</a></li>
+      <li><a href="products.html?cat=watches" id="nav-watches" class="nav-link-badge">Watches <span>NEW</span></a></li>
+      <li><a href="products.html" id="nav-shop">Shop All</a></li>
       <li><a href="about.html" id="nav-about">How It Works</a></li>
       <li><a href="about.html#faq" id="nav-faq">FAQ</a></li>
     </ul>
@@ -70,7 +64,8 @@
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
   <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
   <a href="index.html">Home</a>
-  <a href="products.html">Shop</a>
+  <a href="products.html?cat=watches">⌚ Men's Watches</a>
+  <a href="products.html">Shop All Products</a>
   <a href="about.html">How It Works</a>
   <a href="about.html#faq">FAQ</a>
   <a href="cart.html">🛒 Cart</a>
@@ -79,7 +74,7 @@
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero" id="hero" aria-label="Hero">
   <div class="hero-bg">
-    <img src="images/hero_banner.jpg" alt="Nigerian woman in luxury fashion" loading="eager">
+    <img src="images/hero_banner.jpg" alt="Nigerian luxury lifestyle and timepieces" loading="eager">
   </div>
   <div class="container">
     <div class="hero-content fade-up">
@@ -93,18 +88,18 @@
         Nigeria.
       </h1>
       <p class="hero-desc">
-        Why pay double for Aba fakes? Pre-order authentic Gucci, Zara, Puma, Louis Vuitton, Nike & more — we source directly so you save up to 70%. Delivered to your door in <strong>≤30 days</strong>.
+        Why pay double for boutique markups or risky replicas? Pre-order authentic Casio, Fossil, Titan, Emporio Armani, Ferragamo, Nike & Gucci — direct from global flagships so you save up to 70%. Delivered to your door in <strong>≤30 days</strong>.
       </p>
       <div class="hero-actions">
-        <a href="products.html" class="btn btn-primary btn-lg" id="hero-cta-shop">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          Pre-Order Now
+        <a href="products.html?cat=watches" class="btn btn-primary btn-lg" id="hero-cta-watches">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Explore Watches
         </a>
-        <a href="about.html" class="btn btn-outline btn-lg" id="hero-cta-learn">How It Works</a>
+        <a href="products.html" class="btn btn-outline btn-lg" id="hero-cta-shop">View All Products</a>
       </div>
       <div class="hero-stats">
         <div>
-          <div class="hero-stat-value" data-count="5000">0</div>
+          <div class="hero-stat-value" data-count="5000">5,000+</div>
           <div class="hero-stat-label">Happy Customers</div>
         </div>
         <div>
@@ -112,12 +107,12 @@
           <div class="hero-stat-label">Average Savings</div>
         </div>
         <div>
-          <div class="hero-stat-value">≤30</div>
-          <div class="hero-stat-label">Days Delivery</div>
+          <div class="hero-stat-value">≤18</div>
+          <div class="hero-stat-label">Days Batch Delivery</div>
         </div>
         <div>
-          <div class="hero-stat-value" data-count="20">0</div>
-          <div class="hero-stat-label">Global Brands</div>
+          <div class="hero-stat-value" data-count="40">40+</div>
+          <div class="hero-stat-label">Watch & Luxury Brands</div>
         </div>
       </div>
     </div>
@@ -133,12 +128,12 @@
   <div class="container">
     <div class="trust-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      100% Authentic
+      100% Authentic Guaranteed
     </div>
     <div class="trust-sep" aria-hidden="true"></div>
     <div class="trust-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      Delivered in ≤ 30 Days
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Official Manufacturer Warranty
     </div>
     <div class="trust-sep" aria-hidden="true"></div>
     <div class="trust-item">
@@ -158,62 +153,140 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════ BRANDS ═══════════════════════════════ -->
+<!-- ═══════════════════════════════ BRANDS MARQUEE ═══════════════════════════════ -->
 <section class="brands-section section" id="brands" aria-label="Partner brands">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Our Brands</div>
-      <h2 class="section-title">Shop <em>Authentic</em> Luxury</h2>
-      <p class="text-muted" style="margin-top:0.75rem;max-width:500px;margin-inline:auto">
-        We partner with verified international sourcing networks to bring you the world's best brands straight to Nigeria.
+      <div class="section-label">Official Sourcing Network</div>
+      <h2 class="section-title">Shop <em>Authentic</em> World-Class Brands</h2>
+      <p class="text-muted" style="margin-top:0.75rem;max-width:540px;margin-inline:auto">
+        Direct from authorized retailers and flagship boutiques in the UK, Japan, Italy, Dubai, and Switzerland.
       </p>
     </div>
   </div>
   <div class="marquee-wrapper" aria-hidden="true">
     <div class="marquee-track" id="marquee-track">
-      <div class="brand-chip">GUCCI</div>
-      <div class="brand-chip">ZARA</div>
-      <div class="brand-chip">PUMA</div>
-      <div class="brand-chip">LOUIS VUITTON</div>
-      <div class="brand-chip">NIKE</div>
-      <div class="brand-chip">BALENCIAGA</div>
-      <div class="brand-chip">ADIDAS</div>
-      <div class="brand-chip">VERSACE</div>
-      <div class="brand-chip">BURBERRY</div>
-      <div class="brand-chip">FENDI</div>
+      <div class="brand-chip">CASIO G-SHOCK</div>
+      <div class="brand-chip">FOSSIL</div>
+      <div class="brand-chip">TITAN</div>
+      <div class="brand-chip">EMPORIO ARMANI</div>
+      <div class="brand-chip">ARMANI EXCHANGE</div>
+      <div class="brand-chip">MICHAEL KORS</div>
+      <div class="brand-chip">SALVATORE FERRAGAMO</div>
+      <div class="brand-chip">TIMEX</div>
       <div class="brand-chip">CALVIN KLEIN</div>
-      <div class="brand-chip">TOMMY HILFIGER</div>
-      <div class="brand-chip">RALPH LAUREN</div>
-      <div class="brand-chip">H&M PREMIUM</div>
+      <div class="brand-chip">ALBA</div>
+      <div class="brand-chip">SKECHERS</div>
+      <div class="brand-chip">DANIEL KLEIN</div>
+      <div class="brand-chip">DANIEL HECHTER</div>
+      <div class="brand-chip">CARLTON LONDON</div>
+      <div class="brand-chip">ROLEX</div>
+      <div class="brand-chip">GUCCI</div>
+      <div class="brand-chip">DIOR</div>
+      <div class="brand-chip">CHANEL</div>
+      <div class="brand-chip">PRADA</div>
+      <div class="brand-chip">NIKE</div>
       <!-- duplicates for infinite loop -->
-      <div class="brand-chip">GUCCI</div>
-      <div class="brand-chip">ZARA</div>
-      <div class="brand-chip">PUMA</div>
-      <div class="brand-chip">LOUIS VUITTON</div>
-      <div class="brand-chip">NIKE</div>
-      <div class="brand-chip">BALENCIAGA</div>
-      <div class="brand-chip">ADIDAS</div>
-      <div class="brand-chip">VERSACE</div>
-      <div class="brand-chip">BURBERRY</div>
-      <div class="brand-chip">FENDI</div>
+      <div class="brand-chip">CASIO G-SHOCK</div>
+      <div class="brand-chip">FOSSIL</div>
+      <div class="brand-chip">TITAN</div>
+      <div class="brand-chip">EMPORIO ARMANI</div>
+      <div class="brand-chip">ARMANI EXCHANGE</div>
+      <div class="brand-chip">MICHAEL KORS</div>
+      <div class="brand-chip">SALVATORE FERRAGAMO</div>
+      <div class="brand-chip">TIMEX</div>
       <div class="brand-chip">CALVIN KLEIN</div>
-      <div class="brand-chip">TOMMY HILFIGER</div>
-      <div class="brand-chip">RALPH LAUREN</div>
-      <div class="brand-chip">H&M PREMIUM</div>
+      <div class="brand-chip">ALBA</div>
+      <div class="brand-chip">SKECHERS</div>
+      <div class="brand-chip">DANIEL KLEIN</div>
+      <div class="brand-chip">DANIEL HECHTER</div>
+      <div class="brand-chip">CARLTON LONDON</div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════ THE WATCH GALLERY (NEW MYNTRA-INSPIRED SHOWCASE) ═══════════════════════════════ -->
+<section class="section" id="watch-showcase" style="background:#fafafa;padding:4.5rem 0" aria-label="Men's watches collection">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+      <div>
+        <div class="section-label">The Timepiece Connoisseur</div>
+        <h2 class="section-title">Men's <em>Luxury Watches</em></h2>
+        <div class="gold-divider"></div>
+        <p class="text-muted" style="margin-top:0.4rem">
+          Precision chronographs, automatic skeletons, and classic dress watches with official manufacturer warranty.
+        </p>
+      </div>
+      <a href="products.html?cat=watches" class="btn btn-outline" id="view-all-watches">Explore All Watches (40+) →</a>
+    </div>
+
+    <!-- Quick Brand Pills for Watches -->
+    <div class="brand-pills-bar" id="home-watch-pills" style="margin-bottom:1.5rem">
+      <div class="brand-pill active" onclick="filterHomeWatches('ALL', this)">All Watches</div>
+      <div class="brand-pill" onclick="filterHomeWatches('CASIO', this)">Casio G-Shock</div>
+      <div class="brand-pill" onclick="filterHomeWatches('Fossil', this)">Fossil</div>
+      <div class="brand-pill" onclick="filterHomeWatches('Titan', this)">Titan</div>
+      <div class="brand-pill" onclick="filterHomeWatches('Emporio Armani', this)">Emporio Armani</div>
+      <div class="brand-pill" onclick="filterHomeWatches('Michael Kors', this)">Michael Kors</div>
+      <div class="brand-pill" onclick="filterHomeWatches('Ferragamo', this)">Ferragamo</div>
+      <div class="brand-pill" onclick="filterHomeWatches('Timex', this)">Timex</div>
+    </div>
+
+    <div class="products-grid" id="home-watches-grid">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Shop by Watch Movement / Style -->
+    <div style="margin-top:3.5rem">
+      <div class="section-label" style="text-align:center">Curated Categories</div>
+      <h3 style="font-family:var(--font-display);font-size:1.6rem;text-align:center;font-weight:700;color:var(--text);margin-bottom:0.5rem">Shop by Watch Style</h3>
+      <div class="gold-divider" style="margin-inline:auto;margin-bottom:1.75rem"></div>
+
+      <div class="watch-showcase-grid">
+        <div class="watch-style-card" onclick="location.href='products.html?cat=watches&movement=Chronograph'">
+          <img src="images/watches/watch_102.jpg" alt="Chronograph watches" onerror="this.src='images/product_rolex_submariner.jpg'">
+          <div class="watch-style-overlay">
+            <div class="watch-style-title">Chronographs</div>
+            <div class="watch-style-desc">Motorsport & Aviation Dials · From ₦64,000</div>
+          </div>
+        </div>
+        <div class="watch-style-card" onclick="location.href='products.html?cat=watches&movement=Automatic'">
+          <img src="images/watches/watch_107.jpg" alt="Automatic skeleton watches" onerror="this.src='images/product_rolex_submariner.jpg'">
+          <div class="watch-style-overlay">
+            <div class="watch-style-title">Automatic Skeletons</div>
+            <div class="watch-style-desc">Mechanical Heartbeat Dials · From ₦68,000</div>
+          </div>
+        </div>
+        <div class="watch-style-card" onclick="location.href='products.html?cat=watches&brand=Titan'">
+          <img src="images/watches/watch_109.jpg" alt="Ultra-Slim Ceramic watches" onerror="this.src='images/product_rolex_submariner.jpg'">
+          <div class="watch-style-overlay">
+            <div class="watch-style-title">Ultra-Slim & Ceramic</div>
+            <div class="watch-style-desc">Titan Edge Sapphire · From ₦52,000</div>
+          </div>
+        </div>
+        <div class="watch-style-card" onclick="location.href='products.html?cat=watches&brand=CASIO'">
+          <img src="images/watches/watch_101.jpg" alt="Tough Solar & Shock Resistant watches" onerror="this.src='images/product_rolex_submariner.jpg'">
+          <div class="watch-style-overlay">
+            <div class="watch-style-title">Tough Solar & G-Shock</div>
+            <div class="watch-style-desc">Rugged Military Tech · From ₦42,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══════════════════════════════ FEATURED PRODUCTS ═══════════════════════════════ -->
-<section class="section" id="featured" aria-label="Featured products">
+<section class="section" id="featured" aria-label="Featured designer pieces">
   <div class="container">
     <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
       <div>
-        <div class="section-label">Pre-Order Now</div>
-        <h2 class="section-title">Featured <em>Pieces</em></h2>
+        <div class="section-label">Pre-Order Now · Batch 7</div>
+        <h2 class="section-title">Trending <em>Fashion & Accessories</em></h2>
         <div class="gold-divider"></div>
       </div>
-      <a href="products.html" class="btn btn-outline" id="view-all-products">View All Products →</a>
+      <a href="products.html" class="btn btn-outline" id="view-all-products">View Full Catalog (55+) →</a>
     </div>
     <div class="products-grid" id="featured-grid">
       <!-- Injected by JS -->
@@ -229,75 +302,41 @@
       <h2 class="section-title">How <em>LuxeNaija</em> Works</h2>
       <div class="gold-divider" style="margin-inline:auto"></div>
       <p class="text-muted" style="margin-top:0.5rem;max-width:480px;margin-inline:auto">
-        Getting authentic luxury fashion delivered to Nigeria has never been this easy.
+        Getting authentic luxury watches and international fashion delivered to Nigeria has never been this seamless.
       </p>
     </div>
     <div class="steps-grid">
       <div class="step-card fade-up" id="step-1">
         <div class="step-number">01</div>
         <div class="step-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <div class="step-title">Browse & Select</div>
-        <p class="step-desc">Explore our curated catalog of authentic international brands. Filter by category, brand, size, and price — all in Naira.</p>
+        <p class="step-desc">Explore 40+ authentic watches and luxury designer pieces. Filter by brand, strap, movement, and price — all priced transparently in Naira.</p>
       </div>
       <div class="step-card fade-up" id="step-2" style="transition-delay:0.1s">
         <div class="step-number">02</div>
         <div class="step-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
         <div class="step-title">Pre-Order & Pay</div>
-        <p class="step-desc">Add items to your cart and pay securely via Paystack. We batch orders every two weeks so we can keep costs incredibly low.</p>
+        <p class="step-desc">Add items to your cart and lock in Batch 7 pricing. We batch pre-orders directly with brand distributors to eliminate middleman markups.</p>
       </div>
       <div class="step-card fade-up" id="step-3" style="transition-delay:0.2s">
         <div class="step-number">03</div>
         <div class="step-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
-        <div class="step-title">We Source & Ship</div>
-        <p class="step-desc">Our international team sources your items from verified brand retailers across UK, US, Italy & Dubai and ships directly to you.</p>
+        <div class="step-title">We Sourced & Ship</div>
+        <p class="step-desc">Our teams source directly from official stores in UK, Japan, Italy & Dubai. Each piece is checked for authenticity with official boxes and paperwork.</p>
       </div>
       <div class="step-card fade-up" id="step-4" style="transition-delay:0.3s">
         <div class="step-number">04</div>
         <div class="step-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
         </div>
         <div class="step-title">Receive at Your Door</div>
-        <p class="step-desc">Your authentic fashion arrives at your doorstep anywhere in Nigeria — within 30 days of your pre-order. Guaranteed.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ COMPARISON ═══════════════════════════════ -->
-<section class="comparison-section" id="comparison" aria-label="LuxeNaija vs Aba Made comparison">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Why Choose Us</div>
-      <h2 class="section-title">LuxeNaija vs <em>The Alternative</em></h2>
-      <div class="gold-divider" style="margin-inline:auto"></div>
-    </div>
-    <div class="comparison-grid">
-      <div class="compare-card luxe">
-        <div class="compare-title" style="color:var(--green-dark)">👑 LuxeNaija</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> 100% Authentic international items</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> Prices up to 70% below local market</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> Official brand tags, receipts & packaging</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> Delivered within ≤ 30 days nationwide</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> Full buyer protection & returns policy</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> 20+ global luxury brands</div>
-        <div class="compare-item"><span class="ci-icon">✓</span> Secure Paystack/Flutterwave payment</div>
-      </div>
-      <div class="compare-vs" aria-label="versus">VS</div>
-      <div class="compare-card aba">
-        <div class="compare-title">🏪 Local Markets</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> Counterfeit or low-quality replicas</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> Overpriced despite poor quality</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> No brand authenticity or packaging</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> No guaranteed delivery timeline</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> No returns or buyer protection</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> Limited brand selection</div>
-        <div class="compare-item"><span class="ci-icon" style="color:#f87171">✗</span> Cash only, no payment security</div>
+        <p class="step-desc">Your genuine timepiece arrives safely anywhere in Nigeria with WhatsApp tracking and full buyer satisfaction guarantee.</p>
       </div>
     </div>
   </div>
@@ -307,74 +346,41 @@
 <section class="testimonials" id="testimonials" aria-label="Customer testimonials">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Real Reviews</div>
-      <h2 class="section-title">What Our <em>Customers</em> Say</h2>
+      <div class="section-label">Real Customer Feedback</div>
+      <h2 class="section-title">What Our <em>Collectors & Buyers</em> Say</h2>
       <div class="gold-divider" style="margin-inline:auto"></div>
     </div>
     <div class="testimonials-track">
       <div class="testimonial-card fade-up">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"I ordered a Gucci belt and it arrived in exactly 24 days. The authenticity certificate was inside! People at my office can't believe I didn't pay ₦200k at Eko Hotel mall."</p>
+        <p class="testimonial-text">"I ordered the Casio Edifice Chronograph. It arrived in 17 days in Lagos with the complete official Casio box and warranty card stamped. Local boutiques wanted ₦140k, got it here for ₦75k!"</p>
         <div class="testimonial-author">
-          <div class="author-avatar">AO</div>
+          <div class="author-avatar">TO</div>
           <div>
-            <div class="author-name">Adaeze Okonkwo</div>
-            <div class="author-location">Lagos, Nigeria</div>
+            <div class="author-name">Tunde Oladipo</div>
+            <div class="author-location">Lekki Phase 1, Lagos</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card fade-up" style="transition-delay:0.1s">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Finally stopped buying 'Aba made' Nike because LuxeNaija is cheaper AND real! My Air Jordans arrived in 3 weeks. Will never go back to the market."</p>
+        <p class="testimonial-text">"The Fossil Townsman Skeleton automatic watch is breathtaking! Genuine leather, smooth self-winding movement, zero batteries. Best luxury shopping experience in Nigeria."</p>
         <div class="testimonial-author">
-          <div class="author-avatar">EI</div>
+          <div class="author-avatar">CN</div>
           <div>
-            <div class="author-name">Emmanuel Ikenna</div>
-            <div class="author-location">Abuja, Nigeria</div>
+            <div class="author-name">Chinedu Nnamdi</div>
+            <div class="author-location">Maitama, Abuja</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card fade-up" style="transition-delay:0.2s">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"The Zara collection they carry is amazing! I pre-ordered 3 dresses and they all came perfectly packed with original tags. Customer service was super responsive too."</p>
+        <p class="testimonial-text">"Got the Titan Edge ceramic watch. Super slim, sapphire glass, completely authentic. Pre-order arrived right within the batch timeline. LuxeNaija has earned a customer for life."</p>
         <div class="testimonial-author">
-          <div class="author-avatar">FK</div>
+          <div class="author-avatar">BA</div>
           <div>
-            <div class="author-name">Fatima Kabiru</div>
-            <div class="author-location">Kano, Nigeria</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-up" style="transition-delay:0.3s">
-        <div class="stars">★★★★☆</div>
-        <p class="testimonial-text">"Took 28 days for my order which was a bit long but worth every day. The Louis Vuitton wallet is 100% real — I even checked with the LV app QR code."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">CM</div>
-          <div>
-            <div class="author-name">Chidimma Mordi</div>
-            <div class="author-location">Port Harcourt, Nigeria</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-up" style="transition-delay:0.4s">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Bought Balenciaga hoodie for my husband's birthday. He thought I flew abroad to get it 😂 I paid ₦65k instead of ₦180k in the store. God bless LuxeNaija!"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">NN</div>
-          <div>
-            <div class="author-name">Ngozi Nwachukwu</div>
-            <div class="author-location">Enugu, Nigeria</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-up" style="transition-delay:0.5s">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"As a fashion influencer, authenticity is everything. LuxeNaija is the only place I trust in Nigeria. My Versace sunglasses arrived with original box and everything."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">OA</div>
-          <div>
-            <div class="author-name">Oluwaseun Adeleke</div>
-            <div class="author-location">Lagos, Nigeria</div>
+            <div class="author-name">Babajide Adeleke</div>
+            <div class="author-location">Ibadan, Oyo State</div>
           </div>
         </div>
       </div>
@@ -382,90 +388,41 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════ NEWSLETTER ═══════════════════════════════ -->
-<section class="newsletter" id="newsletter" aria-label="Newsletter signup">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label">Stay in the Loop</div>
-      <h2 class="section-title">Get <em>Early Access</em></h2>
-      <div class="gold-divider"></div>
-      <p class="text-muted" style="margin-top:0.5rem;max-width:380px">
-        Subscribe and get notified first when new brands and products drop. Plus, get 10% off your first order.
-      </p>
-    </div>
-    <div class="fade-up" style="transition-delay:0.15s">
-      <form class="newsletter-form" id="newsletter-form" novalidate>
-        <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email address..." required aria-label="Email address">
-        <button type="submit" class="btn btn-primary" id="newsletter-submit">
-          Get 10% Off →
-        </button>
-      </form>
-      <p style="margin-top:0.75rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">No spam. Unsubscribe anytime. 🔒 We protect your data.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-<footer id="footer" role="contentinfo">
+<!-- FOOTER -->
+<footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="images/logo.jpg" alt="LuxeNaija Logo" class="footer-logo-img">
-        <p class="footer-desc">Nigeria's premier destination for authentic international luxury fashion. Real brands. Unbeatable prices. Delivered to your door in ≤ 30 days.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn" aria-label="Instagram" id="footer-instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="Twitter/X" id="footer-twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="WhatsApp" id="footer-whatsapp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="TikTok" id="footer-tiktok">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-          </a>
-        </div>
+      <div class="footer-col">
+        <div class="footer-logo">Luxe<span>Naija</span></div>
+        <p class="footer-tagline">Real Brands. Real Prices. Nigeria.</p>
+        <p class="footer-desc">
+          Nigeria's premier direct-sourcing luxury collective. Pre-order authentic timepieces and designer fashion directly from authorized international flagships.
+        </p>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Shop</div>
-        <ul>
-          <li><a href="products.html?cat=bags" id="footer-bags">Bags & Purses</a></li>
-          <li><a href="products.html?cat=sneakers" id="footer-sneakers">Sneakers</a></li>
-          <li><a href="products.html?cat=clothing" id="footer-clothing">Clothing</a></li>
-          <li><a href="products.html?cat=accessories" id="footer-accessories">Accessories</a></li>
-          <li><a href="products.html?cat=watches" id="footer-watches">Watches</a></li>
-          <li><a href="products.html?sale=1" id="footer-sale">Sale Items</a></li>
+        <div class="footer-title">Watch Collections</div>
+        <ul class="footer-links">
+          <li><a href="products.html?brand=CASIO">Casio G-Shock</a></li>
+          <li><a href="products.html?brand=Fossil">Fossil Chronographs</a></li>
+          <li><a href="products.html?brand=Titan">Titan Edge Slim</a></li>
+          <li><a href="products.html?brand=Emporio%20Armani">Emporio Armani</a></li>
+          <li><a href="products.html?brand=Timex">Timex Heritage</a></li>
+          <li><a href="products.html?brand=Ferragamo">Salvatore Ferragamo</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Company</div>
-        <ul>
-          <li><a href="about.html" id="footer-about">About Us</a></li>
-          <li><a href="about.html#how-it-works" id="footer-how">How It Works</a></li>
-          <li><a href="about.html#faq" id="footer-faq">FAQ</a></li>
-          <li><a href="#" id="footer-blog">Style Blog</a></li>
-          <li><a href="#" id="footer-careers">Careers</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Support</div>
-        <ul>
-          <li><a href="#" id="footer-track">Track Your Order</a></li>
-          <li><a href="#" id="footer-returns">Returns Policy</a></li>
-          <li><a href="#" id="footer-contact">Contact Us</a></li>
-          <li><a href="#" id="footer-whatsapp-support">WhatsApp Support</a></li>
-          <li><a href="#" id="footer-privacy">Privacy Policy</a></li>
-          <li><a href="#" id="footer-terms">Terms of Service</a></li>
+        <div class="footer-title">Support & FAQ</div>
+        <ul class="footer-links">
+          <li><a href="about.html">How It Works</a></li>
+          <li><a href="about.html#faq">Authenticity Guarantee</a></li>
+          <li><a href="cart.html">View Cart & Checkout</a></li>
+          <li><a href="about.html#contact">WhatsApp Delivery Updates</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 LuxeNaija. All rights reserved. Prices in Nigerian Naira (₦).</p>
-      <div class="footer-bottom-links">
-        <a href="#" id="footer-paystack-info">Secured by Paystack</a>
-        <a href="#" id="footer-flutterwave-info">& Flutterwave</a>
-      </div>
+      <p>© 2026 LuxeNaija. All rights reserved. 100% Original Products Guaranteed.</p>
+      <a href="products.html" class="btn-ghost">Explore Full Catalog →</a>
     </div>
   </div>
 </footer>
@@ -475,7 +432,7 @@
   <div class="search-box-container">
     <div class="search-input-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Gucci, Nike, Zara, Bags, Sneakers..." aria-label="Search items">
+      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Casio, Fossil, Titan, Armani, Chronograph, Steel..." aria-label="Search items">
       <button class="search-close-btn" id="search-modal-close" aria-label="Close search">✕</button>
     </div>
     <div class="search-results-grid" id="search-modal-results"></div>

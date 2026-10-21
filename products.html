@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop All Products — LuxeNaija</title>
-  <meta name="description" content="Browse authentic Gucci, Zara, Puma, Nike, Louis Vuitton & more. Pre-order and get delivered to Nigeria in ≤30 days at unbeatable prices.">
+  <title>Men Watches & Luxury Fashion — LuxeNaija</title>
+  <meta name="description" content="Shop authentic Casio, Fossil, Titan, Emporio Armani, Armani Exchange, Michael Kors, Ferragamo, Timex, Alba, Calvin Klein, Skechers & designer fashion. Pre-order delivered to Nigeria in ≤30 days.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
@@ -23,16 +23,15 @@
 <!-- Promo Bar -->
 <div class="promo-bar" aria-label="Promotions">
   <div class="promo-track" id="promo-track">
-    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Before It Closes!</div>
-    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Delivery on Orders Above ₦150,000</div>
-    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts Included</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Market Prices</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, PH & More</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Before It Closes!</div>
-    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Delivery on Orders Above ₦150,000</div>
-    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts Included</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Market Prices</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, PH & More</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Watches & Designer Wear Before It Closes!</div>
+    <div class="promo-item"><span class="promo-dot"></span> ⌚ Men's Watches: Casio, Fossil, Titan, Emporio Armani, Michael Kors & Ferragamo</div>
+    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Insured Delivery on Orders Above ₦150,000</div>
+    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic Guaranteed — Official Manufacturer Warranty & Brand Packaging</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Boutique Prices</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, Port Harcourt, Ibadan & More</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Watches & Designer Wear Before It Closes!</div>
+    <div class="promo-item"><span class="promo-dot"></span> ⌚ Men's Watches: Casio, Fossil, Titan, Emporio Armani, Michael Kors & Ferragamo</div>
+    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Insured Delivery on Orders Above ₦150,000</div>
   </div>
 </div>
 
@@ -44,7 +43,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
-      <li><a href="products.html" class="active" id="nav-shop">Shop</a></li>
+      <li><a href="products.html?cat=watches" id="nav-watches" class="nav-link-badge">Watches <span>NEW</span></a></li>
+      <li><a href="products.html" class="active" id="nav-shop">Shop All</a></li>
       <li><a href="about.html" id="nav-about">How It Works</a></li>
       <li><a href="about.html#faq" id="nav-faq">FAQ</a></li>
     </ul>
@@ -60,56 +60,118 @@
     </div>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
-  <a href="index.html">Home</a><a href="products.html">Shop</a><a href="about.html">How It Works</a><a href="cart.html">🛒 Cart</a>
+  <a href="index.html">Home</a>
+  <a href="products.html?cat=watches">⌚ Men's Watches</a>
+  <a href="products.html">Shop All Products</a>
+  <a href="about.html">How It Works</a>
+  <a href="cart.html">🛒 Cart</a>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero" id="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Shop</span></div>
-    <div class="section-label">Pre-Order Collection</div>
-    <h1 class="section-title">Shop <em>All Products</em></h1>
-    <p class="text-muted" style="margin-top:0.75rem;max-width:480px;margin-inline:auto">
-      Authentic international luxury fashion. Pre-order today, delivered to your door in ≤ 30 days.
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span id="catalog-breadcrumb-current">Shop Watches & Fashion</span></div>
+    <div class="section-label">Batch 7 Sourcing Catalog</div>
+    <h1 class="section-title">Men's Watches & <em>Designer Collection</em></h1>
+    <p class="text-muted" style="margin-top:0.75rem;max-width:560px;margin-inline:auto">
+      Authentic timepieces & international designer luxury. Sourced directly from global brand flagships, delivered to Nigeria in ≤30 days at up to 70% off local prices.
     </p>
   </div>
 </div>
 
 <!-- CATALOG LAYOUT -->
 <div class="container">
+
+  <!-- ── QUICK BRAND SELECTION PILLS (Myntra Standard) ── -->
+  <div class="brand-pills-bar" id="brand-pills-bar" aria-label="Quick brand filters">
+    <div class="brand-pill active" data-brand-filter="ALL">All Products</div>
+    <div class="brand-pill" data-brand-filter="CASIO">CASIO G-Shock</div>
+    <div class="brand-pill" data-brand-filter="Fossil">Fossil</div>
+    <div class="brand-pill" data-brand-filter="Titan">Titan</div>
+    <div class="brand-pill" data-brand-filter="Emporio Armani">Emporio Armani</div>
+    <div class="brand-pill" data-brand-filter="Armani Exchange">Armani Exchange</div>
+    <div class="brand-pill" data-brand-filter="Michael Kors">Michael Kors</div>
+    <div class="brand-pill" data-brand-filter="Ferragamo">Ferragamo</div>
+    <div class="brand-pill" data-brand-filter="Timex">Timex</div>
+    <div class="brand-pill" data-brand-filter="Alba">Alba</div>
+    <div class="brand-pill" data-brand-filter="Calvin Klein">Calvin Klein</div>
+    <div class="brand-pill" data-brand-filter="Carlton London">Carlton London</div>
+    <div class="brand-pill" data-brand-filter="Daniel Klein">Daniel Klein</div>
+    <div class="brand-pill" data-brand-filter="Daniel Hechter">Daniel Hechter</div>
+    <div class="brand-pill" data-brand-filter="Skechers">Skechers</div>
+    <div class="brand-pill" data-brand-filter="Rolex">Rolex</div>
+  </div>
+
   <div class="catalog-layout" id="catalog-main">
 
-    <!-- ── FILTER SIDEBAR ── -->
+    <!-- ── FILTER SIDEBAR (Myntra Standard) ── -->
     <aside class="filter-sidebar" id="filter-sidebar" aria-label="Product filters">
+      <div class="filter-header">
+        <h3>FILTERS</h3>
+        <span class="filter-clear" id="clear-filters">CLEAR ALL</span>
+      </div>
 
+      <!-- Categories Filter -->
+      <div class="filter-block">
+        <div class="filter-block-title">Categories</div>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="watches"> Watches & Timepieces <span class="filter-check-count" id="count-cat-watches">40</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="bags"> Bags & Purses <span class="filter-check-count" id="count-cat-bags">4</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="sneakers"> Sneakers & Shoes <span class="filter-check-count" id="count-cat-sneakers">4</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="clothing"> Clothing <span class="filter-check-count" id="count-cat-clothing">3</span></label>
+        <label class="filter-check"><input type="checkbox" class="filter-cat" value="accessories"> Accessories <span class="filter-check-count" id="count-cat-accessories">4</span></label>
+      </div>
+
+      <!-- Brand Filter with Search -->
       <div class="filter-block">
         <div class="filter-block-title">Brand</div>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Rolex"> Rolex</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Dior"> Dior</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Chanel"> Chanel</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Gucci"> Gucci</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Prada"> Prada</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Hermes"> Hermès</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="YSL"> Saint Laurent (YSL)</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Louis Vuitton"> Louis Vuitton</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Balenciaga"> Balenciaga</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Versace"> Versace</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Nike"> Nike</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Adidas"> Adidas</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Puma"> Puma</label>
-        <label class="filter-check"><input type="checkbox" class="filter-brand" value="Zara"> Zara</label>
+        <input type="text" id="brand-filter-search" class="filter-search-box" placeholder="🔍 Search Brand..." aria-label="Search brand list">
+        <div class="filter-scrollable-list" id="brand-filter-list">
+          <!-- Populated dynamically by JS with product counts -->
+        </div>
       </div>
 
+      <!-- Price Range Filter -->
       <div class="filter-block">
-        <div class="filter-block-title">Category</div>
-        <label class="filter-check"><input type="checkbox" class="filter-cat" value="bags"> Bags & Purses <span class="filter-check-count">2</span></label>
-        <label class="filter-check"><input type="checkbox" class="filter-cat" value="sneakers"> Sneakers <span class="filter-check-count">4</span></label>
-        <label class="filter-check"><input type="checkbox" class="filter-cat" value="clothing"> Clothing <span class="filter-check-count">3</span></label>
-        <label class="filter-check"><input type="checkbox" class="filter-cat" value="accessories"> Accessories <span class="filter-check-count">5</span></label>
+        <div class="filter-block-title">Price Range</div>
+        <div class="price-range">
+          <input type="range" id="price-range" min="30000" max="1500000" value="1500000" step="10000" aria-label="Maximum price slider">
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:0.35rem">
+          <span>Min: ₦30,000</span>
+          <span id="price-max-label" style="font-weight:700;color:var(--green-dark)">₦1,500,000</span>
+        </div>
+        <div style="margin-top:0.75rem;display:flex;flex-direction:column;gap:0.3rem">
+          <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="price-bracket" class="price-bracket-radio" value="all" checked> All Prices</label>
+          <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="price-bracket" class="price-bracket-radio" value="0-60000"> Under ₦60,000</label>
+          <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="price-bracket" class="price-bracket-radio" value="60000-120000"> ₦60,000 to ₦120,000</label>
+          <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="price-bracket" class="price-bracket-radio" value="120000-250000"> ₦120,000 to ₦250,000</label>
+          <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="price-bracket" class="price-bracket-radio" value="250000-1500000"> Luxury Above ₦250,000</label>
+        </div>
       </div>
 
+      <!-- Strap Material Filter -->
+      <div class="filter-block">
+        <div class="filter-block-title">Strap Material</div>
+        <label class="filter-check"><input type="checkbox" class="filter-strap" value="Stainless Steel"> Stainless Steel</label>
+        <label class="filter-check"><input type="checkbox" class="filter-strap" value="Genuine Leather"> Genuine Leather</label>
+        <label class="filter-check"><input type="checkbox" class="filter-strap" value="Silicone"> Silicone / Resin</label>
+        <label class="filter-check"><input type="checkbox" class="filter-strap" value="Ceramic"> Ceramic</label>
+      </div>
+
+      <!-- Movement Mechanism Filter -->
+      <div class="filter-block">
+        <div class="filter-block-title">Movement Type</div>
+        <label class="filter-check"><input type="checkbox" class="filter-movement" value="Chronograph"> Chronograph</label>
+        <label class="filter-check"><input type="checkbox" class="filter-movement" value="Automatic"> Automatic / Skeleton</label>
+        <label class="filter-check"><input type="checkbox" class="filter-movement" value="Quartz"> Quartz Analogue</label>
+        <label class="filter-check"><input type="checkbox" class="filter-movement" value="Solar"> Tough Solar / Bluetooth</label>
+        <label class="filter-check"><input type="checkbox" class="filter-movement" value="Digital"> Digital</label>
+      </div>
+
+      <!-- Gender Filter -->
       <div class="filter-block">
         <div class="filter-block-title">Gender</div>
         <label class="filter-check"><input type="checkbox" class="filter-gender" value="men"> Men</label>
@@ -117,33 +179,40 @@
         <label class="filter-check"><input type="checkbox" class="filter-gender" value="unisex"> Unisex</label>
       </div>
 
+      <!-- Discount Filter -->
       <div class="filter-block">
-        <div class="filter-block-title">Max Price</div>
-        <div class="price-range">
-          <input type="range" id="price-range" min="20000" max="300000" value="300000" step="5000" aria-label="Maximum price">
-          <div class="price-range-labels">
-            <span>₦20,000</span>
-            <span id="price-max-label">₦300,000</span>
-          </div>
-        </div>
+        <div class="filter-block-title">Discount Range</div>
+        <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="discount-range" class="filter-discount" value="0" checked> Any Discount</label>
+        <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="discount-range" class="filter-discount" value="40"> 40% and above</label>
+        <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="discount-range" class="filter-discount" value="50"> 50% and above</label>
+        <label class="filter-check" style="font-size:0.8rem"><input type="radio" name="discount-range" class="filter-discount" value="60"> 60% and above</label>
       </div>
-
     </aside>
 
     <!-- ── PRODUCTS AREA ── -->
     <div>
       <div class="catalog-toolbar">
-        <div class="catalog-count"><span id="product-count">0</span> products found</div>
-        <select class="sort-select" id="sort-select" aria-label="Sort products">
-          <option value="featured">Featured</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="savings">Biggest Savings</option>
-          <option value="rating">Best Rated</option>
-        </select>
+        <div>
+          <div class="catalog-count"><strong id="products-count" style="color:var(--text);font-size:1.05rem">55 items</strong> available in Batch 7</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem">
+          <label for="sort-select" style="font-size:0.85rem;color:var(--text-muted);font-weight:600">Sort by:</label>
+          <select class="catalog-sort" id="sort-select" aria-label="Sort products">
+            <option value="featured">Recommended</option>
+            <option value="rating">Customer Rating</option>
+            <option value="savings">Better Discount (% Off)</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">What's New</option>
+          </select>
+        </div>
       </div>
+
+      <!-- Active Filter Chips Area -->
+      <div id="active-filters"></div>
+
       <div class="products-grid" id="products-grid">
-        <!-- Injected by JS -->
+        <!-- Injected dynamically by JS -->
       </div>
     </div>
 
@@ -153,8 +222,37 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-bottom" style="padding-top:2rem;border-top:1px solid var(--border)">
-      <p>© 2024 LuxeNaija. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Luxe<span>Naija</span></div>
+        <p class="footer-tagline">Real Brands. Real Prices. Nigeria.</p>
+        <p class="footer-desc">
+          Official sourcing network delivering 100% authentic international watches and luxury fashion directly to Nigerian doorsteps.
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Top Watch Brands</div>
+        <ul class="footer-links">
+          <li><a href="products.html?brand=CASIO">Casio G-Shock Watches</a></li>
+          <li><a href="products.html?brand=Fossil">Fossil Chronographs</a></li>
+          <li><a href="products.html?brand=Titan">Titan Edge & Octane</a></li>
+          <li><a href="products.html?brand=Emporio%20Armani">Emporio Armani</a></li>
+          <li><a href="products.html?brand=Michael%20Kors">Michael Kors Watches</a></li>
+          <li><a href="products.html?brand=Ferragamo">Salvatore Ferragamo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Customer Care</div>
+        <ul class="footer-links">
+          <li><a href="about.html">How Pre-Order Works</a></li>
+          <li><a href="about.html#faq">Authenticity Guarantee</a></li>
+          <li><a href="cart.html">View Cart & Checkout</a></li>
+          <li><a href="about.html#contact">WhatsApp Support Line</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 LuxeNaija. All rights reserved. 100% Original Products Guaranteed.</p>
       <a href="index.html" class="btn-ghost">← Back to Home</a>
     </div>
   </div>
@@ -165,7 +263,7 @@
   <div class="search-box-container">
     <div class="search-input-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Gucci, Nike, Zara, Bags, Sneakers..." aria-label="Search items">
+      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Casio, Fossil, Titan, Armani, Chronograph, Steel..." aria-label="Search items">
       <button class="search-close-btn" id="search-modal-close" aria-label="Close search">✕</button>
     </div>
     <div class="search-results-grid" id="search-modal-results"></div>

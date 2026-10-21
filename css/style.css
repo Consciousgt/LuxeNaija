@@ -1291,3 +1291,307 @@ footer {
   .cart-item-img { width: 100%; height: 160px; }
   .nav-actions .nav-icon-btn:not(#cart-btn):not(#search-trigger-btn) { display: none; }
 }
+
+/* ============================================================
+   MYNTRA-STANDARD E-COMMERCE UPGRADE STYLES
+   ============================================================ */
+
+/* ── Myntra Product Card Rating Pill ── */
+.product-rating-pill {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  z-index: 2;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.product-rating-pill .star {
+  color: #0f766e;
+  font-size: 0.75rem;
+}
+.product-rating-pill .sep {
+  color: #d1d5db;
+  font-weight: 300;
+  margin: 0 0.1rem;
+}
+.product-rating-pill .count {
+  color: #6b7280;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+/* Hide rating pill slightly when hover quick-add slides up */
+.product-card:hover .product-rating-pill {
+  transform: translateY(-42px);
+}
+
+/* ── Slide-up Quick Add to Bag (Myntra Standard) ── */
+.product-quick-add-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(102%);
+  transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 14px rgba(0,0,0,0.06);
+  z-index: 3;
+}
+.product-card:hover .product-quick-add-bar {
+  transform: translateY(0);
+}
+.product-quick-add-btn {
+  width: 100%;
+  background: var(--green);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.product-quick-add-btn:hover {
+  background: var(--green-dark);
+}
+.product-quick-add-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── Custom Badges ── */
+.badge-bestseller {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(217, 119, 6, 0.3);
+}
+.badge-trending {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(2, 132, 199, 0.3);
+}
+.badge-hot {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge-new {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Brand Carousel / Quick Pills Bar ── */
+.brand-pills-bar {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.brand-pills-bar::-webkit-scrollbar {
+  height: 4px;
+}
+.brand-pills-bar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.brand-pill {
+  white-space: nowrap;
+  padding: 0.45rem 1.1rem;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.brand-pill:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.brand-pill.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+}
+
+/* ── Filter Sidebar Enhancements ── */
+.filter-search-box {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  background: var(--off-white);
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.filter-search-box:focus {
+  border-color: var(--green);
+  background: #ffffff;
+}
+.filter-scrollable-list {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 0.3rem;
+}
+.filter-scrollable-list::-webkit-scrollbar {
+  width: 4px;
+}
+.filter-scrollable-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* ── Specifications Table (Myntra Detail Standard) ── */
+.specs-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.specs-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+}
+@media (max-width: 600px) {
+  .specs-grid { grid-template-columns: 1fr; }
+}
+.spec-box {
+  background: var(--off-white);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.spec-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.spec-val {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── Watch Showcase Visual Categories (Homepage) ── */
+.watch-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+@media (max-width: 900px) {
+  .watch-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .watch-showcase-grid { grid-template-columns: 1fr; }
+}
+.watch-style-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.watch-style-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.watch-style-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.watch-style-card:hover img {
+  transform: scale(1.08);
+}
+.watch-style-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 30, 24, 0.88) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  color: #ffffff;
+}
+.watch-style-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.watch-style-desc {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.8);
+}

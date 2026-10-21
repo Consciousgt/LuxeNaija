@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Detail — LuxeNaija</title>
-  <meta name="description" content="Pre-order authentic luxury fashion items from LuxeNaija — delivered to Nigeria in ≤30 days.">
+  <title>Product Details — LuxeNaija Luxury Sourcing</title>
+  <meta name="description" content="Pre-order authentic luxury watches and international designer items from LuxeNaija — delivered directly to Nigeria in ≤30 days with verified authenticity guarantee.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
@@ -23,16 +23,10 @@
 <!-- Promo Bar -->
 <div class="promo-bar" aria-label="Promotions">
   <div class="promo-track" id="promo-track">
-    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Before It Closes!</div>
-    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Delivery on Orders Above ₦150,000</div>
-    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts Included</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Market Prices</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, PH & More</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Before It Closes!</div>
-    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Delivery on Orders Above ₦150,000</div>
-    <div class="promo-item"><span class="promo-dot"></span> 💎 100% Authentic — Official Brand Receipts Included</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🚀 Up to 70% Cheaper Than Local Market Prices</div>
-    <div class="promo-item"><span class="promo-dot"></span> 🇳🇬 Delivery Nationwide — Lagos, Abuja, PH & More</div>
+    <div class="promo-item"><span class="promo-dot"></span> 🔥 Batch 7 Now Open — Pre-Order Watches & Designer Wear Before It Closes!</div>
+    <div class="promo-item"><span class="promo-dot"></span> ⌚ 100% Genuine Timepieces — Casio, Fossil, Titan, Emporio Armani, Michael Kors & Ferragamo</div>
+    <div class="promo-item"><span class="promo-dot"></span> ✈️ Free Insured Delivery on Orders Above ₦150,000</div>
+    <div class="promo-item"><span class="promo-dot"></span> 💎 Official Brand Box, Packaging & Warranty Card Included</div>
   </div>
 </div>
 
@@ -44,7 +38,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
-      <li><a href="products.html" class="active" id="nav-shop">Shop</a></li>
+      <li><a href="products.html?cat=watches" id="nav-watches">Watches</a></li>
+      <li><a href="products.html" class="active" id="nav-shop">Shop All</a></li>
       <li><a href="about.html" id="nav-about">How It Works</a></li>
       <li><a href="about.html#faq" id="nav-faq">FAQ</a></li>
     </ul>
@@ -60,134 +55,151 @@
     </div>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
-  <a href="index.html">Home</a><a href="products.html">Shop</a><a href="about.html">How It Works</a><a href="cart.html">🛒 Cart</a>
+  <a href="index.html">Home</a>
+  <a href="products.html?cat=watches">⌚ Men's Watches</a>
+  <a href="products.html">Shop All</a>
+  <a href="about.html">How It Works</a>
+  <a href="cart.html">🛒 Cart</a>
 </div>
 
-<!-- PAGE HERO (breadcrumb) -->
+<!-- TOP SPACING & BREADCRUMB -->
 <div style="padding-top:80px;"></div>
-
-<!-- PRODUCT DETAIL LAYOUT -->
 <div class="container">
   <div style="padding:1.5rem 0 0.5rem">
-    <div class="breadcrumb" style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-muted)">
+    <div class="breadcrumb" style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--text-muted)">
       <a href="index.html" style="color:var(--green)">Home</a>
       <span style="opacity:0.4">/</span>
       <a href="products.html" style="color:var(--green)">Shop</a>
       <span style="opacity:0.4">/</span>
-      <span id="detail-breadcrumb">Product</span>
+      <span id="detail-breadcrumb" style="font-weight:600;color:var(--text)">Product Details</span>
     </div>
   </div>
 
   <div class="detail-layout">
     <!-- ── Gallery ── -->
     <div class="detail-gallery fade-up">
-      <div class="gallery-main">
-        <img id="detail-main-img" src="images/product_gucci_bag.jpg" alt="Product image">
+      <div class="gallery-main" id="gallery-main-container">
+        <img id="detail-main-img" src="images/logo.jpg" alt="Product image" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">
       </div>
       <div class="gallery-thumbs" id="gallery-thumbs">
-        <div class="gallery-thumb active">
-          <img id="thumb-1" src="images/product_gucci_bag.jpg" alt="View 1">
-        </div>
-        <div class="gallery-thumb">
-          <img id="thumb-2" src="images/product_nike_jordan.jpg" alt="View 2">
-        </div>
-        <div class="gallery-thumb">
-          <img id="thumb-3" src="images/product_lv_wallet.jpg" alt="View 3">
+        <div class="gallery-thumb active" onclick="setDetailThumb(this)">
+          <img id="thumb-1" src="images/logo.jpg" alt="Angle 1">
         </div>
       </div>
     </div>
 
     <!-- ── Product Info ── -->
     <div class="detail-info fade-up" style="transition-delay:0.1s">
-      <div class="detail-brand" id="detail-brand">Brand</div>
-      <h1 class="detail-name" id="detail-name">Product Name</h1>
+      <div class="detail-brand" id="detail-brand" style="font-size:0.85rem;letter-spacing:0.18em;font-weight:800;color:var(--green);text-transform:uppercase;margin-bottom:0.4rem">Brand</div>
+      <h1 class="detail-name" id="detail-name" style="font-family:var(--font-display);font-size:1.85rem;font-weight:700;line-height:1.2;margin-bottom:0.75rem">Product Name</h1>
 
-      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem">
-        <span style="color:var(--green);font-size:0.95rem">★★★★★</span>
-        <span style="font-size:0.82rem;color:var(--text-muted)" id="detail-reviews">0 reviews</span>
-        <span style="color:var(--green);font-size:0.78rem;font-weight:600" id="detail-rating">5.0</span>
+      <!-- Myntra Rating Banner -->
+      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:#f3f4f6;padding:0.35rem 0.85rem;border-radius:6px;border:1px solid var(--border);margin-bottom:1rem">
+        <span style="font-weight:800;color:#111827;font-size:0.9rem" id="detail-rating">4.8</span>
+        <span style="color:var(--green);font-size:0.9rem">★</span>
+        <span style="color:#d1d5db;margin:0 0.2rem">|</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);font-weight:600" id="detail-reviews">1,240 Ratings & Verified Reviews</span>
       </div>
 
-      <div class="detail-price-row">
-        <span class="detail-price" id="detail-price">₦0</span>
-        <span class="detail-price-orig" id="detail-price-orig">₦0</span>
-        <span class="detail-savings-tag" id="detail-savings">Save 0%</span>
+      <div class="detail-price-row" style="margin-bottom:1.25rem">
+        <span class="detail-price" id="detail-price" style="font-size:2rem;font-weight:800;color:var(--green-dark)">₦0</span>
+        <span class="detail-price-orig" id="detail-orig" style="font-size:1.15rem;color:var(--text-light);text-decoration:line-through">₦0</span>
+        <span class="detail-savings-tag" id="detail-savings" style="background:var(--green-xlight);color:var(--green-dark);font-weight:700;padding:0.25rem 0.75rem;border-radius:99px;font-size:0.85rem">Save 0%</span>
       </div>
 
-      <p class="detail-desc" id="detail-desc">Loading product details...</p>
+      <p class="detail-desc" id="detail-desc" style="font-size:0.92rem;line-height:1.65;color:var(--text-muted);margin-bottom:1.5rem">Loading product description...</p>
 
-      <div>
-        <div class="size-label">Select Size</div>
-        <div class="size-grid" id="size-grid"></div>
+      <!-- Options / Sizes -->
+      <div style="margin-bottom:1.5rem">
+        <div class="size-label" style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text);margin-bottom:0.6rem">Options / Case Size</div>
+        <div class="size-grid" id="detail-sizes" style="display:flex;flex-wrap:wrap;gap:0.6rem"></div>
       </div>
 
-      <div class="qty-row">
-        <div class="size-label" style="margin:0">Quantity</div>
-        <div class="qty-ctrl">
-          <button id="qty-minus" aria-label="Decrease quantity">−</button>
-          <span id="qty-display">1</span>
-          <button id="qty-plus" aria-label="Increase quantity">+</button>
+      <!-- Quantity -->
+      <div class="qty-row" style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.75rem">
+        <div class="size-label" style="margin:0;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Quantity</div>
+        <div class="qty-ctrl" style="display:flex;align-items:center;border:1.5px solid var(--border);border-radius:8px;overflow:hidden">
+          <button id="detail-qty-minus" style="width:36px;height:36px;background:var(--off-white);border:none;font-weight:700;cursor:pointer;font-size:1.1rem" aria-label="Decrease quantity">−</button>
+          <input type="number" id="detail-qty" value="1" min="1" max="10" readonly style="width:48px;height:36px;text-align:center;border:none;font-weight:700;font-size:0.95rem;background:#fff">
+          <button id="detail-qty-plus" style="width:36px;height:36px;background:var(--off-white);border:none;font-weight:700;cursor:pointer;font-size:1.1rem" aria-label="Increase quantity">+</button>
         </div>
       </div>
 
-      <div class="detail-cta-row">
-        <button class="btn btn-primary btn-lg" id="detail-add-cart" style="flex:1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          Pre-Order Now
+      <!-- Actions -->
+      <div class="detail-cta-row" style="display:flex;gap:1rem;margin-bottom:1.5rem">
+        <button class="btn btn-primary btn-lg" id="detail-add-cart" style="flex:2;justify-content:center;font-weight:700;font-size:1rem;padding:0.95rem 1.5rem">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Add to Bag & Pre-Order
         </button>
-        <a href="cart.html" class="btn btn-outline btn-lg" id="detail-view-cart">View Cart</a>
+        <button class="btn btn-outline btn-lg" id="detail-wishlist" style="flex:1;justify-content:center">
+          ♥ Wishlist
+        </button>
       </div>
 
-      <div class="delivery-info" id="delivery-info">
-        <div class="delivery-info-icon">🚚</div>
-        <div class="delivery-info-text">
-          <strong>Estimated Delivery:</strong> <span id="detail-delivery-days">≤ 30 days</span> after pre-order closes.<br>
-          <span style="color:var(--green);font-weight:600">Batch 7 closes in 6 days</span> — order now to join this batch.
+      <!-- Delivery Batch Info -->
+      <div class="delivery-info" id="delivery-info" style="display:flex;align-items:flex-start;gap:0.85rem;background:var(--green-xlight);border:1.5px solid var(--green-light);padding:1.1rem;border-radius:12px;margin-bottom:1.75rem">
+        <div style="font-size:1.6rem;line-height:1">⚡</div>
+        <div style="font-size:0.85rem;color:var(--green-dark);line-height:1.5">
+          <strong>Batch 7 Pre-Order Guaranteed:</strong> Delivery to your address in <span id="detail-delivery-days">≤ 18 days</span>.<br>
+          Includes official brand presentation box, warranty card, and customs clearance receipt.
         </div>
       </div>
 
-      <!-- Accordion -->
-      <div class="detail-accordion" id="detail-accordion">
+      <!-- Product Specifications (Myntra Standard) -->
+      <div class="specs-section" id="specs-section">
+        <h3 class="specs-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Product Specifications
+        </h3>
+        <div class="specs-grid" id="specs-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Accordion Details -->
+      <div class="detail-accordion" id="detail-accordion" style="margin-top:2rem">
         <div class="accordion-item">
-          <button class="accordion-trigger" id="acc-shipping" aria-expanded="false">
-            Shipping & Delivery
+          <button class="accordion-trigger" id="acc-authenticity" aria-expanded="false">
+            100% Authenticity Guarantee
             <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
-            <p>We source your item from verified international retailers in the UK, US, Italy, or Dubai. Delivery typically takes 20–30 days from when the batch closes. You'll receive WhatsApp updates throughout the process. We deliver to all 36 Nigerian states.</p>
+            <p>Every timepiece is 100% authentic and sourced directly from official authorized distributors and brand boutiques in the UK, Japan, Dubai, or Italy. Includes official brand warranty book and serial number verification.</p>
           </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-trigger" id="acc-authenticity" aria-expanded="false">
-            Authenticity Guarantee
+          <button class="accordion-trigger" id="acc-shipping" aria-expanded="false">
+            Shipping & Nationwide Delivery
             <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
-            <p>Every item comes with its original brand packaging, tags, and where available, an authenticity certificate or receipt. We are 100% accountable for authenticity — full refund if you receive anything other than a genuine branded item.</p>
+            <p>Orders are consolidated into bi-weekly batches to give you up to 70% savings on international logistics and retail markups. We deliver to all 36 Nigerian states with real-time tracking and WhatsApp delivery updates.</p>
           </div>
         </div>
         <div class="accordion-item">
           <button class="accordion-trigger" id="acc-returns" aria-expanded="false">
-            Returns & Refunds
+            Warranty & Buyer Protection
             <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
-            <p>If your item arrives damaged, wrong, or is not authentic, we offer a full refund within 72 hours of delivery. Due to the pre-order nature, change-of-mind returns are not accepted. Please select your size carefully using our size guide.</p>
+            <p>Enjoy up to 2 Years International Manufacturer Warranty on watches. We provide 100% money-back buyer protection if any item arrives damaged or deviates from specifications.</p>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
 
 <!-- RELATED PRODUCTS -->
-<section class="section" id="related-section" style="padding-top:3rem">
+<section class="section" id="related-section" style="padding-top:4rem">
   <div class="container">
     <div class="section-header">
-      <div class="section-label">You May Also Like</div>
-      <h2 class="section-title">Related <em>Pieces</em></h2>
+      <div class="section-label">Curated Recommendations</div>
+      <h2 class="section-title">Similar & <em>Trending Pieces</em></h2>
       <div class="gold-divider"></div>
     </div>
     <div class="products-grid" id="related-grid"></div>
@@ -198,7 +210,7 @@
 <footer>
   <div class="container">
     <div class="footer-bottom" style="padding-top:2rem;border-top:1px solid var(--border)">
-      <p>© 2024 LuxeNaija. All rights reserved.</p>
+      <p>© 2026 LuxeNaija. All rights reserved. 100% Original Products Guaranteed.</p>
       <a href="products.html" class="btn-ghost">← Back to Shop</a>
     </div>
   </div>
@@ -209,7 +221,7 @@
   <div class="search-box-container">
     <div class="search-input-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Gucci, Nike, Zara, Bags, Sneakers..." aria-label="Search items">
+      <input type="text" class="search-input" id="search-modal-input" placeholder="Search Casio, Fossil, Titan, Armani, Chronograph, Steel..." aria-label="Search items">
       <button class="search-close-btn" id="search-modal-close" aria-label="Close search">✕</button>
     </div>
     <div class="search-results-grid" id="search-modal-results"></div>
@@ -217,14 +229,6 @@
 </div>
 
 <div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toast-msg">Added to cart!</span></div>
-
-<!-- Quickview Modal -->
-<div class="quickview-overlay" id="quickview-overlay">
-  <div class="quickview-panel" id="quickview-panel">
-    <div id="quickview-img" style="background:var(--off-white)"></div>
-    <div style="padding:2rem;overflow-y:auto" id="quickview-info"></div>
-  </div>
-</div>
 
 <script src="js/products-data.js"></script>
 <script src="js/animations.js"></script>
