@@ -671,6 +671,9 @@ function renderFilteredCatalog() {
   if (activeFilters.categories.length > 0) {
     list = list.filter(p => activeFilters.categories.some(c => c.toLowerCase() === (p.category || '').toLowerCase()));
   }
+  if (activeFilters.genders.length > 0) {
+    list = list.filter(p => activeFilters.genders.includes(p.gender));
+  }
 
   // Strap material filter
   if (activeFilters.strapMaterials.length > 0) {
